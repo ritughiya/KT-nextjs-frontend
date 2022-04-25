@@ -10,6 +10,7 @@ import Customhead from "../components/Customhead"
 
 
 const query = `*[_type == "homepage"] {
+  _id,
   siteTitle,
   leftNavigation,
   leftColor,
@@ -48,7 +49,7 @@ const IndexPage = ({ properties }) => {
 
       {properties.map(post => (
               
-        <div>
+        <div key={post._id}>
         <div className="linkframe">
           <div className="title">
           <div className="siteLogo pointer">KASSANDRA THATCHER</div>

@@ -40,7 +40,7 @@ const CollectionsPage = ({ properties }) => {
 
       {properties.map(post => (
               
-        <div>
+        <div key={post._id}>
           <div className="title">
             <div className="pageTitle">Collections</div>
           <Link href="/">

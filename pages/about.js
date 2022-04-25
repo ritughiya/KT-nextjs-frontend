@@ -30,7 +30,7 @@ const AboutPage = ({ properties }) => {
 
       {properties.map(post => (
               
-        <div>
+        <div key={post._id}>
           <div className="title">
             <div className="pageTitle">Information</div>
           <Link href="/">
