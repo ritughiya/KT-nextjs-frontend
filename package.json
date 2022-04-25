@@ -1,0 +1,43 @@
+{
+  "name": "kassandra-frontend",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@portabletext/react": "^1.0.6",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^3.3.0",
+    "@sanity/image-url": "^0.140.22",
+    "masonry-layout": "^4.2.2",
+    "next": "12.0.8",
+    "next-images": "^1.8.4",
+    "next-sanity": "^0.5.2",
+    "next-sanity-image": "^3.2.1",
+    "rc-if-else": "^1.2.1",
+    "react": "17.0.2",
+    "react-dom": "^17.0.2",
+    "react-portable-text": "^0.4.3",
+    "react-router-dom": "^5.3.1",
+    "swc-loader": "^0.2.0",
+    "swiper": "^8.1.4",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.5",
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
+}
