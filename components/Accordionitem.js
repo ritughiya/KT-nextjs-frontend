@@ -40,7 +40,7 @@
          {show && (
         <div className="archiveimgContainer">
         {props.archiveimages && props.archiveimages.map(({_id, mainImage=''}) => (
-          <img className="archiveimage placeholder"  src={urlFor(mainImage).url()}></img>
+          <img key={_id} className="archiveimage placeholder"  src={urlFor(mainImage).url()}></img>
         ))}</div>)} 
       
         </div>
