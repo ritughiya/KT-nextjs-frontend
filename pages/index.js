@@ -8,6 +8,25 @@ import { sanityClient, urlFor} from '../sanity'
 import Static from 'next/image'
 import Customhead from "../components/Customhead"
 
+import Navigation from "../components/Navigation"
+
+
+// Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
+const keyStr =
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
+
+const triplet = (e1, e2, e3) =>
+  keyStr.charAt(e1 >> 2) +
+  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
+  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
+  keyStr.charAt(e3 & 63)
+
+const rgbDataURL = (r, g, b) =>
+  `data:image/gif;base64,R0lGODlhAQABAPAA${
+    triplet(0, r, g) + triplet(b, 255, 255)
+  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
+
+
 
 const query = `*[_type == "homepage"] {
   _id,
@@ -43,40 +62,21 @@ const IndexPage = ({ properties }) => {
     setCount(pageView);
   }, []); //No dependency to trigger in each page load
 
+  
+
   return (
     <div className=" Home wrapper">
       <Customhead />
+      <Navigation />
 
       {properties.map(post => (
               
         <div key={post._id}>
-        <div className="linkframe">
-          <div className="title">
-          <div className="siteLogo pointer">KASSANDRA THATCHER</div>
 
-          </div>
-          <div className="horflex">
-          <div className="subtitle Leftsubtitle pointer">
-            <Link href="/collections">
-            Collections
-            </Link>
-          </div>
-          <div className="subtitle Rightsubtitle pointer">
-          <Link href="/archive">
-          Archive
-          </Link>
-          </div>
-          </div>
-          <div className="subtitle Bottomsubtitle pointer">
-          <Link href="/about">
-          Information
-          </Link>
-          </div>
-
-        </div>
-          <img className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
+ 
+          <Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
       "fill"
-    objectFit="contain" placeholder="blur"
+    objectFit="cover" placeholder="blur" blurDataURL={rgbDataURL(73, 71, 63)}
       />
       </div>
       

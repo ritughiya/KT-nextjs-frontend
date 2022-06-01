@@ -17,7 +17,7 @@
 
 html,
 body {
-  background-color: rgba(240, 235, 230, 1);
+  background-color: #F9F7F4 !important;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -31,9 +31,56 @@ a {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
+.mobile{
+  display:none;
+}
+
+.porcelain{
+  background-color: #F9F7F4 !important;
+}
+
+/* Footer styling */
+
+.Footercontainer{
+  padding: 3vh 5vw 10vh 5vw;
+      border-top: 1px solid #2C2913;
+
+}
+
+.Footer{
+  display: flex;
+  
+  justify-content: space-between;
+  align-items: center;}
+
+.col1, .col3{
+  width:25vw;
+  font-size: 0.625em;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+}
+
+.col2{
+  font-size: 1.6em;
+    line-height: 1;
+    width: 20vw;
+    text-align: center;
+    letter-spacing:-0.01em;
+
+}
+
+.col3{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.child1{
+  margin-right:1vw;
+  width:5vw;
+}
 
 /* Home styling */
 
@@ -43,7 +90,18 @@ a {
   overflow:hidden;
 }
 
+@keyframes fade {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:100%;
+  }
+}
+
 .Homebackground{
+  opacity:0;
+  animation: 1s 1s fade ease-in forwards;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -51,6 +109,7 @@ a {
 
 .linkframe{
   position:fixed;
+  z-index:100;
 }
 
 .Home .title,
@@ -81,9 +140,8 @@ a {
   display:flex;
   align-items: center;
   position:fixed;
-  z-index: 1000;
-  background-color: #97948F;
-
+  z-index: 100000;
+  background-color: #f9f7f4;
 }
 
 .Archive .title{
@@ -91,8 +149,13 @@ a {
   align-items: center;
   position:fixed;
   z-index: 1000;
-  background-color: rgba(240, 235, 230, 1);
+  background-color: #f9f7f4;
 
+
+}
+
+.About{
+  background-color: #f4754d;
 }
 
 .About .title{
@@ -100,14 +163,16 @@ a {
   align-items: center;
   position:fixed;
   z-index: 1000;
-  background-color: rgba(240, 235, 230, 1);
+  background-color: #f4754d;
 
 }
+
+
 
 .Home .subtitle,
 .Collections .subtitle{
   font-family: RecklessNeue;
-  z-index: 10000;
+  z-index: 100;
   
 }
 
@@ -127,7 +192,12 @@ a {
   transform-origin: left top;
   font-family: RecklessNeue;
   z-index: 1000;
+  transition: 0.3s;
+}
 
+.Leftsubtitle:hover{
+  height:15vh;
+  background-color: #f9f7f4;
 }
 
 .Rightsubtitle{
@@ -144,7 +214,13 @@ a {
   transform-origin: left top;
   font-family: RecklessNeue;
   z-index: 1000;
+  transition: 0.3s;
 
+}
+
+.Rightsubtitle:hover{
+  height:15vh;
+  background-color: #97948F;
 }
 
 .Bottomsubtitle{
@@ -159,11 +235,17 @@ a {
   justify-content: space-around;
   font-family: RecklessNeue;
   z-index: 1000;
+  transition: 0.3s;
 
 }
 
+.Bottomsubtitle:hover{
+  height:15vh;
+  background-color: #F4754D;
+}
+
 .copy{
-  padding:1vw;
+  padding: 1vw 4vw 1vw 1vw;
 }
 
 .pointer{
@@ -180,12 +262,12 @@ a {
 }
 
 .Collections .title{
-  background-color: rgba(240, 235, 230, 1);
+  background-color: #f9f7f4;
 
 }
 
 .Collections .subtitle{
-  background-color: rgba(240, 235, 230, 1);
+  background-color: #f9f7f4;
 
 }
 
@@ -215,24 +297,35 @@ a {
     justify-content: space-around;
     margin-bottom: 1vw;
 }
-
-/* .grid-item {
-  margin: 1%;
-  float: left;
-  width: 48%;
-    border: 1px solid #2c2913;
-} */
-
-.grid-sizer,
-.grid-item {
-  width: 48%;
+.grid {
+  /* background: #EEE;
+  max-width: 1200px; */
 }
 
-.grid-item {
-  height: 60vh;
-  margin: 1%;
-  float: left;
-  border: 1px solid #2c2913;
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -12px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 12px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  background: transparent;
+  margin-bottom: 12px;
 }
 
 .longBlock{
@@ -259,8 +352,21 @@ a {
   border-bottom: 1px solid #2C2913;
 }
 
+.productContainer:last-child{
+  border-bottom: none !important;
+}
+
+.flexLeft{
+  width:34vw;
+}
+
 .flexRight{
   width:60vw;
+}
+
+.lg-react-element{
+  display: flex;
+  overflow-y: scroll;
 }
 
 /* Collection Page */
@@ -270,8 +376,8 @@ a {
 }
 
 .Collectionswrapper{
-  width: 94vw;
-    margin: 0 3vw;
+  /* width: 94vw;
+  margin: 0 4vw 0 2vw; */
 }
 
 .category{
@@ -287,8 +393,7 @@ a {
 
 .groupTitle{
   text-align:center;
-  padding: 4vw 0;
-
+  padding: 4vh 0 8vh 0;
 }
 
 .description{
@@ -314,6 +419,90 @@ a {
   border:1px solid #2C2913;
   padding: 2vw;
     text-align: center;
+}
+
+
+.buttons{
+  position: absolute;
+  left: 1vw;
+  bottom: 1vw;
+}
+
+button:disabled {
+color:rgba(208, 206, 199, 1);
+}
+
+button {
+  background-color: transparent;
+  border-style: none;
+  color: #2c2913;
+  font-size:1.2em;
+}
+
+.lg-outer .lg-thumb-outer {
+  display:none !important;
+
+}
+
+.lg-toolbar{
+  margin-top: 6vh  !important;
+}
+
+.lg-backdrop{
+  background-color: #f9f7f4  !important;
+}
+
+.lg-outer .lg-inner{
+  height:91vh  !important;
+  margin: 1vh 0 !important;
+}
+
+.lg-toolbar .lg-close:after {
+content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZpZXdCb3g9IjAgMCA0NiA0NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGxpbmUgeDE9IjEuNjQ2NDEiIHkxPSI0NC4yMTI4IiB4Mj0iNDQuNTY2MyIgeTI9IjEuMjkyOTUiIHN0cm9rZT0iIzJDMjkxMyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSIwLjcwNzEwNyIgeTE9IjEuNjAyOTUiIHgyPSI0My42MjciIHkyPSI0NC41MjI4IiBzdHJva2U9IiMyQzI5MTMiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4K") !important;
+}
+
+.lg-toolbar .lg-icon {
+  margin: 0 10px;}
+
+.lg-download{
+  display:none !important;
+}
+
+.lg-next, .lg-prev {
+   border-radius: 0 !important;  
+  cursor: pointer;
+   margin-top: 0 !important; 
+   padding: 0 !important; 
+  top: 50% !important;
+  transform: translate(0, -50%) !important;
+  z-index: 1080;
+  width: 50vw !important;
+  height: 100vh !important;
+  outline: none !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.lg-next:hover{
+  cursor:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODUiIGhlaWdodD0iMzEiIHZpZXdCb3g9IjAgMCA4NSAzMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI0LjY0MzggMC4xNTgyMDNIMjEuMjg5OFYyNi4xNzMyTDQuODIwNzkgMC4xNTgyMDNIMC4xMzM3ODlWMzAuMDAwMkgzLjQ4Nzc5VjMuOTg1MkwxOS45NTY4IDMwLjAwMDJIMjQuNjQzOFYwLjE1ODIwM1oiIGZpbGw9IiM5Nzk0OEYiLz4KPHBhdGggZD0iTTI5LjQ1MzcgMTkuNDIyMkMyOS40NTM3IDI2LjM0NTIgMzMuNzUzNyAzMC4zODcyIDM5LjQyOTcgMzAuMzg3MkM0My45NDQ3IDMwLjM4NzIgNDcuNzcxNyAyOC4xNTEyIDQ4LjcxNzcgMjMuNTkzMkg0NS4zMjA3QzQ0LjU0NjcgMjYuMzAyMiA0Mi4xODE3IDI3LjU5MjIgMzkuMzQzNyAyNy41OTIyQzM1LjI1ODcgMjcuNTkyMiAzMi45Nzk3IDI0LjE5NTIgMzIuODA3NyAyMC40OTcySDQ5LjA2MTdDNDkuMTA0NyAyMC4wMjQyIDQ5LjEwNDcgMTkuNTA4MiA0OS4xMDQ3IDE5LjI5MzJDNDkuMTA0NyAxMi4xMTIyIDQ0Ljk3NjcgOC41MDAyIDM5LjQ3MjcgOC41MDAyQzMzLjYyNDcgOC41MDAyIDI5LjQ1MzcgMTIuNzU3MiAyOS40NTM3IDE5LjQyMjJaTTMyLjg1MDcgMTcuODc0MkMzMy40MDk3IDEzLjY2MDIgMzUuOTQ2NyAxMS4yOTUyIDM5LjUxNTcgMTEuMjk1MkM0Mi45NTU3IDExLjI5NTIgNDUuNTc4NyAxMy41NzQyIDQ1Ljc1MDcgMTcuODc0MkgzMi44NTA3WiIgZmlsbD0iIzk3OTQ4RiIvPgo8cGF0aCBkPSJNNTQuNzc0NCAzMC4wMDAyTDYwLjQ1MDQgMjEuODMwMkw2Ni4yNTU0IDMwLjAwMDJINzAuMTI1NEw2Mi40Mjg0IDE5LjM3OTJMNjkuOTk2NCA4Ljg4NzJINjYuMjEyNEw2MC42MjI0IDE2Ljk3MTJMNTQuODE3NCA4Ljg4NzJINTAuOTQ3NEw1OC42MDE0IDE5LjM3OTJMNTAuOTkwNCAzMC4wMDAySDU0Ljc3NDRaIiBmaWxsPSIjOTc5NDhGIi8+CjxwYXRoIGQ9Ik03MS40MDczIDExLjcyNTJINzQuODkwM1YyNC4wNjYyQzc0Ljg5MDMgMjguMTA4MiA3Ni45OTczIDMwLjMwMTIgODAuNTIzMyAzMC4zMDEyQzgxLjY4NDMgMzAuMzAxMiA4Mi44ODgzIDMwLjE3MjIgODQuMTM1MyAyOS45MTQyVjI2Ljk5MDJDODMuMTAzMyAyNy4yNDgyIDgyLjAyODMgMjcuMzc3MiA4MS4wMzkzIDI3LjM3NzJDNzguOTMyMyAyNy4zNzcyIDc4LjExNTMgMjUuOTU4MiA3OC4xMTUzIDIzLjQyMTJWMTEuNzI1Mkg4NC4xMzUzVjguODg3Mkg3OC4xMTUzVjMuMjk3Mkg3NS4wMTkzVjguODg3Mkg3MS40MDczVjExLjcyNTJaIiBmaWxsPSIjOTc5NDhGIi8+Cjwvc3ZnPgo=), auto;
+
+}
+
+.lg-prev:hover{
+  cursor:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODEiIGhlaWdodD0iMzEiIHZpZXdCb3g9IjAgMCA4MSAzMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIyLjU2NzQgOS4xODgyQzIyLjU2NzQgMi45OTYyIDE4LjYxMTQgMC4xNTgyMDMgMTEuODE3NCAwLjE1ODIwM0gwLjQyMjM2M1YzMC4wMDAySDMuOTA1MzZWMTguMjE4MkgxMS44MTc0QzE4LjYxMTQgMTguMjE4MiAyMi41Njc0IDE1LjM4MDIgMjIuNTY3NCA5LjE4ODJaTTE4Ljk1NTQgOS4xODgyQzE4Ljk1NTQgMTMuMjczMiAxNi44MDU0IDE1LjEyMjIgMTEuODE3NCAxNS4xMjIySDMuOTA1MzZWMy4yNTQySDExLjgxNzRDMTYuODA1NCAzLjI1NDIgMTguOTU1NCA1LjEwMzIgMTguOTU1NCA5LjE4ODJaIiBmaWxsPSIjOTc5NDhGIi8+CjxwYXRoIGQ9Ik0zNy42ODMyIDguNTg2MkMzNi45NTIyIDguNTQzMiAzNi41NjUyIDguNTQzMiAzNi4xNzgyIDguNTQzMkMzMy42ODQyIDguNTQzMiAzMC44ODkyIDkuNzkwMiAyOS41MTMyIDEyLjc1NzJWOC44ODcySDI2LjQxNzJWMzAuMDAwMkgyOS42NDIyVjE4LjM0NzJDMjkuNjQyMiAxNC4yNjIyIDMyLjM5NDIgMTEuOTQwMiAzNS43MDUyIDExLjk0MDJDMzYuMjY0MiAxMS45NDAyIDM2LjkwOTIgMTEuOTQwMiAzNy42ODMyIDExLjk4MzJWOC41ODYyWiIgZmlsbD0iIzk3OTQ4RiIvPgo8cGF0aCBkPSJNMzkuMjg2MyAxOS40MjIyQzM5LjI4NjMgMjYuMzQ1MiA0My41ODYzIDMwLjM4NzIgNDkuMjYyMyAzMC4zODcyQzUzLjc3NzMgMzAuMzg3MiA1Ny42MDQzIDI4LjE1MTIgNTguNTUwMyAyMy41OTMySDU1LjE1MzNDNTQuMzc5MyAyNi4zMDIyIDUyLjAxNDMgMjcuNTkyMiA0OS4xNzYzIDI3LjU5MjJDNDUuMDkxMyAyNy41OTIyIDQyLjgxMjMgMjQuMTk1MiA0Mi42NDAzIDIwLjQ5NzJINTguODk0M0M1OC45MzczIDIwLjAyNDIgNTguOTM3MyAxOS41MDgyIDU4LjkzNzMgMTkuMjkzMkM1OC45MzczIDEyLjExMjIgNTQuODA5MyA4LjUwMDIgNDkuMzA1MyA4LjUwMDJDNDMuNDU3MyA4LjUwMDIgMzkuMjg2MyAxMi43NTcyIDM5LjI4NjMgMTkuNDIyMlpNNDIuNjgzMyAxNy44NzQyQzQzLjI0MjMgMTMuNjYwMiA0NS43NzkzIDExLjI5NTIgNDkuMzQ4MyAxMS4yOTUyQzUyLjc4ODMgMTEuMjk1MiA1NS40MTEzIDEzLjU3NDIgNTUuNTgzMyAxNy44NzQySDQyLjY4MzNaIiBmaWxsPSIjOTc5NDhGIi8+CjxwYXRoIGQ9Ik03MC43MDU5IDI2Ljc3NTJMNjQuMjU1OSA4Ljg4NzJINjAuNzcyOUw2OC42ODQ5IDMwLjAwMDJINzIuNjQwOUw4MC41NTI5IDguODg3Mkg3Ny4xNTU5TDcwLjcwNTkgMjYuNzc1MloiIGZpbGw9IiM5Nzk0OEYiLz4KPC9zdmc+Cg==), auto;
+
+}
+
+.lg-next {
+  right: 0 !important;
+}
+
+.lg-next:before {
+  content: none !important;
+}
+
+.lg-prev:after {
+  content: none !important;
 }
 
 /* Archive Page */
@@ -356,7 +545,7 @@ a {
   display: flex;
     /* width: 88vw; */
     /* margin-left: 12vw; */
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #2c2913;
     height: 6vh;
     padding: 1vw;
     text-transform: uppercase;
@@ -369,7 +558,7 @@ a {
   display: flex;
   padding: 1vw;
   line-height: 1.35;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #2c2913;
 }
 
 .subyear,
@@ -411,11 +600,13 @@ a {
 .About .Rightsubtitle{
   width: 94vh;
   padding: 0 6vh 0 0;
+  background-color: #f4754d;
 }
 
 .About .Leftsubtitle{
   width: 94vh;
   padding: 0 0vh 0 6vh;
+  background-color: #f4754d;
 
 }
 
@@ -433,21 +624,26 @@ a {
 
 .Abouthed{
   font-family: RecklessNeue;
-  font-size:1.5em;
+  font-size:1.9em;
 }
 
 .Aboutdesc{
-  padding: 8vw 5vw;
-  justify-content: space-between;
+  padding: 10vw 5vw 5vw 5vw;
+    justify-content: space-between;
   display:flex;
+}
+
+.contactdesc{
+  padding: 0vw 5vw 5vw 5vw;
 }
 
 
 
 .Abouttxt{
-  width: 75%;
-  font-size:1.75em;
-  line-height: 1.6em;
+  width: 70%;
+  font-size: 1.75em;
+  line-height: 1.5em;
+  letter-spacing: -0.02em;
   
 }
 
@@ -461,3 +657,222 @@ a {
   text-indent: 0em;
 }
 
+.socialgroup{
+  display:flex;
+  padding-bottom: 10px;
+}
+
+.Aboutsocial1{
+  width: 20%;
+  margin-right: 5%;
+  font-family: RecklessNeue;
+  font-size: 0.75em;
+  letter-spacing: 0.01em;
+}
+
+.stockistflex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stockistgroup {
+  width: 30%;
+  margin: 0 3% 7% 0;
+}
+
+.stockistcity{
+  margin-right: 5%;
+  font-family: RecklessNeue;
+  font-size: 0.75em;
+  letter-spacing: 0.01em;
+}
+
+@media only screen and (max-width:800px){
+  .desktop{
+    display:none !important;
+  }
+
+  .mobile{
+    display:block;
+  }
+
+  .siteLogo{
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.1em;
+  }
+
+  .Home .title{
+    justify-content: space-between;
+  }
+
+  button{
+    background-color: transparent !important;
+    border-style: none !important;
+  }
+
+  .Home .title button,
+  .Collections .title button,
+  .About .title button,
+  .Archive .title button{
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: auto;
+    margin: auto 0;
+  }
+
+  .Home .title button.open,
+  .Collections .title button.open,
+  .About .title button.open,
+  .Archive .title button.open{
+    height:20px;
+  }
+
+  .h2{
+    height: 6vh;
+    display: flex;
+    padding: auto;
+    border-left: 1px solid #2c2913;
+    padding-left: 2vw;
+  }
+
+  .bar-one,
+  .bar-two,
+  .bar-three {
+    width: 27px;
+    height: 1px;
+    background: #2c2913;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+
+  .bar-one {
+    transform: rotate(0);
+  }
+
+  .bar-two {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bar-three {
+    transform: rotate(0);
+  }
+
+  .open .bar-one {
+   
+    transform: rotate(46deg);
+    }
+
+    .open .bar-two {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+
+    .open .bar-three {
+      transform: rotate(-45deg);
+    }
+
+    .EZDrawer .EZDrawer__container {
+      width: 100%;
+      height: 94vh !important;
+      margin-top: 6vh;
+      box-shadow: none !important;
+      background-color: #F9F7F4 !important;
+    }
+
+    .EZDrawer ul{
+      margin-block-start: 0;
+      margin-block-end: 0;
+      list-style-type: none;
+      padding-inline-start: 0;
+      height: 94vh !important;
+      display: grid;
+      overflow: hidden;
+      grid-template-rows: repeat(3, 1fr);
+      grid-auto-columns: 1fr;
+      grid-column-gap: 5px;
+      max-width: 100%;
+    }
+
+    .EZDrawer ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #2c2913;
+    cursor:pointer;
+    font-family: RecklessNeue;
+    font-size: 1.75em;
+    transition: 0.3s;
+    }
+
+    .EZDrawer ul li:hover{
+      background-color: #2c2913;
+      color: #F9F7F4 !important;
+      }
+
+    .EZDrawer ul li:last-child{
+      border-bottom: 0px solid #2c2913 !important;
+      }
+
+      .copy{
+        padding: 3vw;
+      }
+
+      .longBlock,
+      .shortBlock{
+        height:45vh !important;
+      }
+
+      /* Footer */
+
+      .Footercontainer {
+        padding: 3vh 5vw 8vh 5vw;}
+
+      .Footer{
+        align-items: flex-start;
+      }
+
+      .col2{
+        width: 70vw;
+        margin: 0 auto;
+        font-size: 2.25em;
+        padding: 10vh 0 0 0;
+      }
+
+      .col1{
+        width: 50vw;
+      }
+
+      .col3{
+        display:block;
+      }
+
+      .child1{
+        width:100%;
+      }
+
+      /* About page */
+
+      .Aboutdesc {
+       display: block;
+    }
+
+      .Abouthed{
+        margin: 5%;
+        text-align:center;
+      }
+
+      .Abouttxt {
+        width: 100%;
+      }
+
+      .stockistgroup {
+        width: 40%;
+        margin: 0 9% 7% 0;
+    }
+
+}

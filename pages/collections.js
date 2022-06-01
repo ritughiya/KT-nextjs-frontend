@@ -7,9 +7,19 @@ import Script from 'next/script'
 import { sanityClient, urlFor} from '../sanity'
 import Static from 'next/image'
 import Customhead from "../components/Customhead"
+import Footer from "../components/Footer"
+import Masonry from 'react-masonry-css'
+import Navigationcollection from "../components/Navigation-collection"
+
+
 
 import { If, Elif, Else } from 'rc-if-else';
 
+// import component 👇
+import Drawer from 'react-modern-drawer'
+
+//import styles 👇
+import 'react-modern-drawer/dist/index.css'
 
 const query = `*[_type == "collectionspage"] {
   pageTitle,
@@ -22,49 +32,50 @@ const query = `*[_type == "collectionspage"] {
 }
 `
 
+const breakpointColumnsObj = {
+  default: 2,
+  800: 1
+};
+
 const CollectionsPage = ({ properties }) => {
 
-//   var elem = document.querySelector('.grid');
-// var msnry = new Masonry( elem, {
-//   // options
-//   itemSelector: '.grid-item',
-//   // use element for option
-//   columnWidth: '.grid-sizer',
-//   percentPosition: true,
-//   horizontalOrder: true
-// });
+  const [isOpen, setIsOpen] = useState(false)
+  const [isActive, setActive] = useState(false)
+  const [show, setShow] = useState(false)
+  const toggleDrawer = () => {
+        setIsOpen((prevState) => !prevState)
+        setActive(!isActive);
+    } 
+    const showRooms = () => {
+      setShow(!show);
+  } 
+
+
 
   return (
     <div className="Collections wrapper">
       <Customhead />
+      <Head>
+        <title>Collections | Kassandra Thatcher</title>
+        <meta property="og:title" content="Collections | Kassandra Thatcher" key="title" />
+      </Head>
+      <Navigationcollection />
+
 
       {properties.map(post => (
               
         <div key={post._id}>
-          <div className="title">
-            <div className="pageTitle">Collections</div>
-          <Link href="/">
-          <div className="siteLogo">KASSANDRA THATCHER</div>
-          </Link>
-          <div>&nbsp;</div>
-          </div>
-         
-          <div className="subtitle Rightsubtitle">
-          <Link href="/archive">
-          Archive
-          </Link>
-          </div>
-          <div className="subtitle Bottomsubtitle">
-          <Link href="/about">
-          Information
-          </Link>
-          </div>
+        
+
 
         <div className="Collectionswrapper">
         <div className="copy">
           <div className="groupTitle">The Collections</div>
 
-          <div className="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": "true", "gutter": 10 }'>
+          <Masonry
+  breakpointCols={breakpointColumnsObj}
+  className="my-masonry-grid"
+  columnClassName="my-masonry-grid_column">
           {post.collections && post.collections.map(({_id, slug = '', collectionTitle = '', collectionDesc = '', size = '', backgroundImage=''}) =>  (
                      <>
                      <If condition={size === "shorter"}>
@@ -92,7 +103,7 @@ const CollectionsPage = ({ properties }) => {
                  
              ))
              }
-                          </div>
+</Masonry>
              </div>
              </div>
 
@@ -104,7 +115,7 @@ const CollectionsPage = ({ properties }) => {
 
       
 
-      
+      <Footer />
       
     </div>
   )

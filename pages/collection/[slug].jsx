@@ -1,23 +1,16 @@
-import {urlFor, sanityClient} from "../../sanity"
-import { useState, useEffect } from 'react';
+import { sanityClient, urlFor} from '../../sanity'
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image'
 import Link from "next/link"
 
 import Customhead from "../../components/Customhead"
 import Head from 'next/head'
 import PortableText from '@sanity/block-content-to-react'
+import Navigationcollection from "../../components/Navigation-collection"
+import Footer from "../../components/Footer"
+import Slider from "../../components/Carousel"
 
-import { EffectFade, FreeMode, Navigation, Thumbs } from 'swiper';
-import { Swiper, SwiperSlide } from "swiper/react";
-
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
-import "swiper/css/effect-fade";
-
+import LightGallery from 'lightgallery/react';
 
 
 
@@ -56,39 +49,22 @@ const Collection = ({
     selectedWorks
 }) => {
 
+
   
-  
-
-
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
-    
 
   return (
     <div className="Collections wrapper">
     <Customhead />
+    <Head>
+        <title>{collectionDesc} | Kassandra Thatcher</title>
+        <meta property="og:title" content="{collectionDesc} | Kassandra Thatcher" key="title" />
+      </Head>
               
               <div>
-                <div className="title">
-                  <div className="pageTitle">Collections</div>
-                <Link href="/">
-                <div className="siteLogo">KASSANDRA THATCHER</div>
-                </Link>
-                <div>&nbsp;</div>
-                </div>
-               
-                <div className="subtitle Rightsubtitle">
-                <Link href="/archive">
-                Archive
-                </Link>
-                </div>
-                <div className="subtitle Bottomsubtitle">
-                <Link href="/about">
-                Information
-                </Link>
-                </div>
+            <Navigationcollection />
       
               <div className="Productswrapper">
+                
               <div className="">
 
             <div>
@@ -121,54 +97,27 @@ const Collection = ({
              </div>
              </div>
 
-
-
-             <div className="flexRight">
-             {slideshow && 
-              <Swiper
-              onSwiper={setThumbsSwiper}  
-              slidesPerView={2}
-              freeMode={true}
-              watchSlidesProgress={true}
-              modules={[FreeMode, Navigation, Thumbs]}
-              className="mySwiper"
-              height={120}
-              spaceBetween={5}
-      
-            >
-             {slideshow.map(({_id, mainImage = '', alt =''}) => (
-
-              
-              <SwiperSlide key={_id}>
-                              <div style={{ position: 'relative', width: '30vw', height: '80vh' }}>
-                {mainImage && <Image className="placeholder" draggable="false" onDragStart="return false;" onContextMenu={(e)=> e.preventDefault()} src={urlFor(mainImage).url()} width="100%" height="120px" layout="fill" objectFit="cover" placeholder="blur"
-            blurDataURL={rgbDataURL(73, 71, 63)}/> }</div>
-                    
-              </SwiperSlide> ))}
-              
-              </Swiper>
-              }
-              </div>
+<Slider slides={{slideshow}}/>
 
 
 
-                    
-              </div>
+</div>
                            
-        ))}
-        </div>
-                
-                   </div>
-                   </div>
-      
-                
-            </div>
-            
-            
-                  
-                  </div>
-  )
-}
+                           ))}
+                           </div>
+                                   
+                                      </div>
+                                      </div>
+                         
+                                   
+                               </div>
+                               
+                               <Footer />
+                   
+                                     
+                                     </div>
+                     )
+                   }
 
 export const getServerSideProps = async (pageContext) => {
     const pageSlug = pageContext.query.slug

@@ -12,7 +12,7 @@
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^0.140.22",
-    "masonry-layout": "^4.2.2",
+    "lightgallery": "^2.4.0",
     "next": "12.0.8",
     "next-images": "^1.8.4",
     "next-sanity": "^0.5.2",
@@ -20,10 +20,11 @@
     "rc-if-else": "^1.2.1",
     "react": "17.0.2",
     "react-dom": "^17.0.2",
+    "react-masonry-css": "^1.0.16",
+    "react-modern-drawer": "^1.1.1",
     "react-portable-text": "^0.4.3",
     "react-router-dom": "^5.3.1",
     "swc-loader": "^0.2.0",
-    "swiper": "^8.1.4",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {

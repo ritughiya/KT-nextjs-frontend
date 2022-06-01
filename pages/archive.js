@@ -7,6 +7,10 @@ import Script from 'next/script'
 import { sanityClient, urlFor} from '../sanity'
 import Static from 'next/image'
 import Customhead from "../components/Customhead"
+import Footer from "../components/Footer"
+import Navigationarchive from "../components/Navigation-archive"
+
+
 
 
 const query = `*[_type == "archivepage"] {
@@ -27,37 +31,19 @@ const ArchivePage = ({ properties }) => {
   return (
     <div className="Archive wrapper">
       <Customhead />
+      <Head>
+        <title>Archive | Kassandra Thatcher</title>
+        <meta property="og:title" content="Archive | Kassandra Thatcher" key="title" />
+      </Head>
+      <Navigationarchive />
 
               
       {properties.map(post => (
 
 <div key={post._id}>
-<div>
-        <div className="title">
-            <div className="pageTitle">Archive</div>
-          <Link href="/">
-          <div className="siteLogo pointer">KASSANDRA THATCHER</div>
-          </Link>
-          <div>&nbsp;</div>
-          </div>
 
-          </div>
          
-          <div className="subtitle Leftsubtitle">
-            <Link href="/collections">
-            Collections
-            </Link>
-          </div>
-          <div className="subtitle Rightsubtitle">
-          <Link href="/archive">
-          Archive
-          </Link>
-          </div>
-          <div className="subtitle Bottomsubtitle">
-          <Link href="/about">
-          Information
-          </Link>
-          </div>
+          
 
 <div className="worklist">
   <div className="sorting">
@@ -88,6 +74,9 @@ const ArchivePage = ({ properties }) => {
 
         
           ))}
+
+<Footer />
+
           </div>
           
           
