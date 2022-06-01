@@ -106,7 +106,7 @@ a {
 
 .Homebackground{
   opacity:0;
-  animation: 1s 1s fade ease-in forwards;
+  animation: 0.5s fade ease-in forwards;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
