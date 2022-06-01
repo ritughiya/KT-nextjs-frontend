@@ -68,7 +68,7 @@ const rgbDataURL = (r, g, b) =>
 
 
 {slides.slideshow.map(({_id, mainImage = '', alt =''}, index) => (
-                <a href={urlFor(mainImage).url()}>
+                <a key={_id} href={urlFor(mainImage).url()}>
                   <div style={{ position: 'relative', width: '25vw', height: '77vh', marginRight: '10px' }} key={index}>
                     {mainImage && <Image className="placeholder"  src={urlFor(mainImage).url()} width="100%" height="100%" layout="fill" objectFit="cover" placeholder="blur"
  blurDataURL={rgbDataURL(73, 71, 63)}/> }

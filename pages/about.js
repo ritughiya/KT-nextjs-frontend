@@ -128,7 +128,7 @@ const AboutPage = ({ properties }) => {
             <div className="Abouttxt stockistflex">
           {post.stockists && post.stockists.map(({_id, city = '', storename =''}) => (
 
-            <div className="stockistgroup">
+            <div key={_id} className="stockistgroup">
               <div className="stockistcity">{city}</div>
               <div className="stockistname"><PortableText 
             blocks = {storename}
