@@ -515,6 +515,7 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
 .Archive{
   background-color: #97948F;
   width:100vw;
+  min-height:100vh;
 }
 
 .Archive .worklist{
@@ -539,10 +540,13 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
   display:none;
 }
 
-.worklist,
-.Workcontainer{
+.Archive .Bottomsubtitle{
+  background-color: #97948F;
+}
+
+.worklist{
   width: 100%;
-    padding-left: 45px;
+    padding-left: 6vh;
 }
 
 .sorting{
@@ -561,6 +565,7 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
 
 .Workcontainer{
   padding: 1vw;
+  width: 100%;
   line-height: 1.35;
   max-height:1000px;
   transition: max-height 1s ease-in-out;
