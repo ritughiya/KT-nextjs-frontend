@@ -53,7 +53,7 @@ const Collection = ({
   
 
   return (
-    <div className="Collections wrapper">
+    <div className="Collections Collectiondetail wrapper">
     <Customhead />
     <Head>
         <title>{collectionDesc} | Kassandra Thatcher</title>
@@ -70,10 +70,13 @@ const Collection = ({
             <div>
 
               {selectedWorks && selectedWorks.map(({_id='', category='', title='', description='', specsheet='', slideshow=''}) => (
-         <div key={_id}  className="productContainer copy"> 
+         <div key={_id}  className="copy Workborder"> 
+         <div className="category mobile">{category && category}</div>
+         <div className="Worktitle mobile">{title && title}</div>
+         <div className="productContainer">
          <div className="flexLeft">
-         <div className="category">{category && category}</div>
-         <div className="Worktitle">{title && title}</div>
+         <div className="category desktop">{category && category}</div>
+         <div className="Worktitle desktop">{title && title}</div>
 
         {description && <div className="description">
                <PortableText 
@@ -100,6 +103,7 @@ const Collection = ({
 <Slider slides={{slideshow}}/>
 
 
+</div>
 
 </div>
                            

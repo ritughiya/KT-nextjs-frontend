@@ -50,6 +50,11 @@ a {
 
 }
 
+.Archive .Footercontainer,
+.Collectiondetail .Footercontainer{
+  border-top:none;
+}
+
 .Footer{
   display: flex;
   
@@ -510,7 +515,6 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
 .Archive{
   background-color: #97948F;
   width:100vw;
-  height:100vh;
 }
 
 .Archive .worklist{
@@ -536,7 +540,7 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
 }
 
 .worklist,
-.Workitem{
+.Workcontainer{
   width: 100%;
     padding-left: 45px;
 }
@@ -546,19 +550,34 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
     /* width: 88vw; */
     /* margin-left: 12vw; */
     border-bottom: 1px solid #2c2913;
-    height: 6vh;
+    height: 4vh;
     padding: 1vw;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     letter-spacing: 0.1em;
     font-size: 0.75em;
+    align-items: center;
+}
+
+.Workcontainer{
+  padding: 1vw;
+  line-height: 1.35;
+  max-height:1000px;
+  transition: max-height 1s ease-in-out;
+}
+
+.Workborder{
+  border-bottom: 1px solid #2c2913;
+
+}
+
+.Workcontainer:hover{
+  cursor:pointer;
 }
 
 .Workitem{
   display: flex;
-  padding: 1vw;
-  line-height: 1.35;
-  border-bottom: 1px solid #2c2913;
+
 }
 
 .subyear,
@@ -575,7 +594,7 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
 
 .subproject,
 .Workproject{
-  width: 33%;
+  width: 30%;
   
 }
 
@@ -587,6 +606,30 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
   letter-spacing: -0.02em;
   font-size: 2em;
   padding-right:2%;
+
+}
+
+.archiveimgContainer {
+  display: flex;
+  transition: 1s;
+
+}
+
+@keyframes stretch {
+  from {
+    height:0;
+  }
+  to {
+    height:30vh;
+  }
+}
+
+
+img.archiveimage {
+  height: 30vh;
+  width: auto;
+  margin-right: 10px;  
+  transition: 0.03s;
 
 }
 
@@ -874,5 +917,48 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
         width: 40%;
         margin: 0 9% 7% 0;
     }
+
+    /* archive page */
+
+    .worklist,
+.Workcontainer{
+    padding-left: 0px;
+}
+
+.Workitem,
+.archiveimgContainer{
+  padding: 1vw;
+}
+
+.subcat, .Workcat,
+.subdims, .Workdims{
+  display:none;
+}
+
+.subproject, .Workproject {
+  width: 50%;
+}
+
+.subyear, .Workyear {
+  width: 25%;
+}
+
+/* slug page */
+
+.productContainer{
+flex-direction: column-reverse;}
+
+.flexLeft,
+.flexRight {
+  width: 94vw;
+}
+
+.workdetail{
+  width: 94vw !important;
+}
+
+.Worktitle{
+  margin-bottom: 2vh;
+}
 
 }

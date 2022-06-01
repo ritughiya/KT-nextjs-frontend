@@ -76,7 +76,7 @@ const IndexPage = ({ properties }) => {
  
           <Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
       "fill"
-    objectFit="cover" placeholder="blur" blurDataURL={rgbDataURL(73, 71, 63)}
+    objectFit="cover" 
       />
       </div>
       

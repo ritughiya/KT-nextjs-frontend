@@ -47,6 +47,8 @@ const rgbDataURL = (r, g, b) =>
  
  const Carousel  = ({slides}) => {
 
+  console.log(slides)
+
   const onInit = () => {
     console.log('lightGallery has been initialized');
 };
@@ -64,12 +66,13 @@ const rgbDataURL = (r, g, b) =>
                 speed={500}
                 plugins={[lgThumbnail]}
                 loop={true}
+                mode={'lg-fade'}
             >
 
 
 {slides.slideshow.map(({_id, mainImage = '', alt =''}, index) => (
                 <a key={_id} href={urlFor(mainImage).url()}>
-                  <div style={{ position: 'relative', width: '25vw', height: '77vh', marginRight: '10px' }} key={index}>
+                  <div className="workdetail" style={{ position: 'relative', width: '25vw', height: '77vh', marginRight: '10px' }} key={index}>
                     {mainImage && <Image className="placeholder"  src={urlFor(mainImage).url()} width="100%" height="100%" layout="fill" objectFit="cover" placeholder="blur"
  blurDataURL={rgbDataURL(73, 71, 63)}/> }
  </div>
