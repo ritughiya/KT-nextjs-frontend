@@ -9,9 +9,10 @@ import Static from 'next/image'
 import Customhead from "../components/Customhead"
 import Footer from "../components/Footer"
 import Navigationarchive from "../components/Navigation-archive"
-import Accordionitem from "../components/Accordionitem"
+import Accordionitem from "../components/Accordionitem.jsx"
 
 
+import { If, Elif, Else } from 'rc-if-else';
 
 
 
@@ -31,7 +32,6 @@ const query = `*[_type == "archivepage"] {
 
 const ArchivePage = ({ properties }) => {
 
-  console.log(properties)
 
     // State to show/hide accordion
     const [show, setShow] = useState(false);
@@ -67,20 +67,7 @@ const ArchivePage = ({ properties }) => {
     </div>
 
           {post.selectedWorks && post.selectedWorks.map(({_id, year = '', title = '', category = '', dimensions = '', status = '', archivestatus = '', archiveimages}, index) => (
-//   <div key={index} className="Workcontainer">
-//     <div className="Workitem"  onClick={handleOpen}>
-//   {year && <div className="Workyear">{year}</div>}
-//   {title && <div className="Workproject">{title}</div>}
-//   {category && <div className="Workcat">{category}</div>}
-//   {dimensions && <div className="Workdims">{dimensions}</div>}
-//   {status && <div className="Workstatus">{status}</div>}
-//   </div>
 
-//   {show && (
-//   <div className="archiveimgContainer">
-//   {archiveimages && archiveimages.map(({_id, mainImage=''}) => (
-//     <img className="archiveimage placeholder"  src={urlFor(mainImage).url()}></img>
-//   ))}</div>)}
 
   
 // </div>

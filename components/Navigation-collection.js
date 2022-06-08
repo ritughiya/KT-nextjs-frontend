@@ -37,7 +37,7 @@ import 'react-modern-drawer/dist/index.css'
 <div className="desktop title">
             <div className="pageTitle">Collections</div>
           <Link href="/">
-          <div className="siteLogo pointer">KASSANDRA THATCHER</div>
+          <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app">KASSANDRA THATCHER STUDIO</Link></div>
           </Link>
           <div>&nbsp;</div>
           </div>

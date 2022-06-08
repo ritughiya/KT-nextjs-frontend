@@ -9,6 +9,7 @@ import Static from 'next/image'
 import Customhead from "../components/Customhead"
 
 import Navigation from "../components/Navigation"
+import { If, Elif, Else } from 'rc-if-else';
 
 
 // Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
@@ -72,12 +73,28 @@ const IndexPage = ({ properties }) => {
       {properties.map(post => (
               
         <div key={post._id}>
+          <>
 
- 
+<If condition={post.background === "image"}>
+
           <Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
       "fill"
     objectFit="cover" 
       />
+
+      </If>
+
+
+<If condition={post.background === "video"}>
+
+<Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
+"fill"
+objectFit="cover" 
+/>
+
+</If>
+
+      </>
       </div>
       
       

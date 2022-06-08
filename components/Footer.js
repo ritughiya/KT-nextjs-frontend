@@ -26,8 +26,9 @@
         KASSANDRA THATCHER STUDIO
         </div>
         <div className="col3">
-            <div className="child1">Press Policy</div>
-            <div className="child2">INSTAGRAM<br></br>email<br></br>newsletter</div>
+            <div className="child1">Web design by Cristhian Sabogal<br></br>Development by Ritu Ghiya</div>
+            <span className="mobile"><br></br></span>
+            <div className="child2">INSTAGRAM<br></br>email</div>
 
         </div>
 

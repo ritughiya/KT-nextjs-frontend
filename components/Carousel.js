@@ -6,7 +6,7 @@
  import Head from 'next/head'
  import Image from 'next/image'
  import styles from '../styles/Home.module.css'
- import React, { useEffect, useState, useCallback } from "react";
+ import React, { useEffect, useState, useCallback, useRef } from "react";
  import Link from 'next/link'
  import Script from 'next/script'
  import { sanityClient, urlFor} from '../sanity'
@@ -14,6 +14,11 @@
  import Customhead from "../components/Customhead"
  import LightGallery from 'lightgallery/react';
 
+
+ import { If, Elif, Else } from 'rc-if-else';
+
+ 
+import HorizontalScroll from 'react-scroll-horizontal'
 
 
 // import plugins if you need
@@ -43,16 +48,21 @@ const rgbDataURL = (r, g, b) =>
 }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
 
 
- 
+
+
+
  
  const Carousel  = ({slides}) => {
 
-  console.log(slides)
 
   const onInit = () => {
     console.log('lightGallery has been initialized');
 };
   
+
+const slideshowAmount = slides.slideshow.length;
+
+
 
    return (
 
@@ -60,32 +70,116 @@ const rgbDataURL = (r, g, b) =>
 
     <div className="flexRight">
 
+{(() => {
+        if (slideshowAmount > 2 ) {
+          return (
+            <>
 
-            <LightGallery
+<HorizontalScroll
+reverseScroll = {true}
+>
+
+             <LightGallery
                 onInit={onInit}
                 speed={500}
                 plugins={[lgThumbnail]}
                 loop={true}
                 mode={'lg-fade'}
+                id={'container'}
             >
 
 
 {slides.slideshow.map(({_id, mainImage = '', alt =''}, index) => (
                 <a key={_id} href={urlFor(mainImage).url()}>
-                  <div className="workdetail" style={{ position: 'relative', width: '25vw', height: '77vh', marginRight: '10px' }} key={index}>
+                  <div className="workdetail" style={{ position: 'relative', width: '25vw', height: '80vh', marginRight: '10px' }} key={index}>
                     {mainImage && <Image className="placeholder"  src={urlFor(mainImage).url()} width="100%" height="100%" layout="fill" objectFit="cover" placeholder="blur"
  blurDataURL={rgbDataURL(73, 71, 63)}/> }
  </div>
                 </a>
 
 ))}
-            </LightGallery>
+            </LightGallery> 
+            </HorizontalScroll>
+            
+      </>
+
+
+          )
+        
+        } else {
+          return (
+            <>
+
+
+            <div className="desktop">
+             <LightGallery
+                onInit={onInit}
+                speed={500}
+                plugins={[lgThumbnail]}
+                loop={true}
+                mode={'lg-fade'}
+                id={'container'}
+            >
+
+
+{slides.slideshow.map(({_id, mainImage = '', alt =''}, index) => (
+                <a key={_id} href={urlFor(mainImage).url()}>
+                  <div className="workdetail" style={{ position: 'relative', width: '25vw', height: '80vh', marginRight: '10px' }} key={index}>
+                    {mainImage && <Image className="placeholder"  src={urlFor(mainImage).url()} width="100%" height="100%" layout="fill" objectFit="cover" placeholder="blur"
+ blurDataURL={rgbDataURL(73, 71, 63)}/> }
+ </div>
+                </a>
+
+))}
+            </LightGallery> 
+            </div>
+
+            <HorizontalScroll
+reverseScroll = {true} className= {'mobile'}
+>
+            <LightGallery
+                onInit={onInit}
+                speed={500}
+                plugins={[lgThumbnail]}
+                loop={true}
+                mode={'lg-fade'}
+                id={'container'}
+            >
+
+
+{slides.slideshow.map(({_id, mainImage = '', alt =''}, index) => (
+                <a key={_id} href={urlFor(mainImage).url()}>
+                  <div className="workdetail" style={{ position: 'relative', width: '25vw', height: '80vh', marginRight: '10px' }} key={index}>
+                    {mainImage && <Image className="placeholder"  src={urlFor(mainImage).url()} width="100%" height="100%" layout="fill" objectFit="cover" placeholder="blur"
+ blurDataURL={rgbDataURL(73, 71, 63)}/> }
+ </div>
+                </a>
+
+))}
+            </LightGallery> 
+            </HorizontalScroll>
+
+
+            
+                  
+      
+                  
+            </>
+
+          )
+        }
+      })()}
+
+
+
+
       
       </div>
 
  
    )
  }
+ 
  
 
 

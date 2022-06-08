@@ -45,7 +45,7 @@ a {
 /* Footer styling */
 
 .Footercontainer{
-  padding: 3vh 5vw 10vh 5vw;
+  padding: 3vh 5vw 8vh 5vw;
       border-top: 1px solid #2C2913;
 
 }
@@ -84,7 +84,7 @@ a {
 
 .child1{
   margin-right:1vw;
-  width:5vw;
+  width:20vw;
 }
 
 /* Home styling */
@@ -183,7 +183,7 @@ a {
 
 
 .Leftsubtitle{
-  width: 88vh;
+  width: 88.1vh;
   height: 6vh;
   transform-origin: top left;
   position: fixed;
@@ -193,11 +193,12 @@ a {
   align-items: center;
   justify-content: space-around;
   border-bottom: 1px solid #2C2913;
+  border-left: 1px solid #2C2913;
   transform: rotate(-90deg) translate(-100%, 0);
   transform-origin: left top;
   font-family: RecklessNeue;
   z-index: 1000;
-  transition: 0.3s;
+  transition: height 0.3s;
 }
 
 .Leftsubtitle:hover{
@@ -206,7 +207,7 @@ a {
 }
 
 .Rightsubtitle{
-  width: 88vh;
+  width: 88.1vh;
   height: 6vh;
   position: fixed;
     left: 100vw;
@@ -215,6 +216,7 @@ a {
   align-items: center;
   justify-content: space-around;
   border-bottom: 1px solid #2C2913;
+  border-right: 1px solid #2C2913;
   transform: rotate(90deg) translate(-00%, 0);
   transform-origin: left top;
   font-family: RecklessNeue;
@@ -367,11 +369,29 @@ a {
 
 .flexRight{
   width:60vw;
+  height:80vh;
+
 }
 
 .lg-react-element{
   display: flex;
   overflow-y: scroll;
+  /* scroll-snap-type: y mandatory; */
+
+}
+
+.lg-counter{
+  font-family: SctoGrotesk !important;
+  letter-spacing: 0.01em !important;
+  font-style: normal  !important;
+  color: #2c2913  !important;
+  font-size: 40px  !important;
+  padding-left: 1vw  !important;
+  padding-top: 1vh  !important;
+}
+
+.workdetail{
+  /* scroll-snap-align: start; */
 }
 
 /* Collection Page */
@@ -540,7 +560,8 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
   display:none;
 }
 
-.Archive .Bottomsubtitle{
+.Archive .Bottomsubtitle,
+.Archive .Leftsubtitle{
   background-color: #97948F;
 }
 
@@ -586,22 +607,34 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
 }
 
 .subyear,
+.Workyear{
+  width: 15%; 
+}
+
+.subproject,
+.Workproject{
+  width: 23%;
+  
+}
+
 .subcat,
+.Workcat{
+  width: 20%;
+  
+}
+
 .subdims,
+.Workdims{
+  width: 22%;
+}
+
 .substatus,
-.Workyear,
-.Workcat,
-.Workdims,
 .Workstatus{
   width: 15%;
   
 }
 
-.subproject,
-.Workproject{
-  width: 30%;
-  
-}
+
 
 .Workyear,
 .Workcat,
@@ -620,21 +653,24 @@ content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHZp
 
 }
 
-@keyframes stretch {
-  from {
-    height:0;
-  }
-  to {
-    height:30vh;
-  }
+.archiveimagecontainer img{
+  height:0 !important;
+  transition: height ease-in-out  0.1s, 1s opacity ease-in-out 0.1s;
+  opacity:0;
 }
+
+.archiveimagecontainer.active img{
+  height: 30vh !important;
+  opacity: 1;
+}
+
+
 
 
 img.archiveimage {
   height: 30vh;
   width: auto;
   margin-right: 10px;  
-  transition: 0.03s;
 
 }
 
@@ -649,12 +685,14 @@ img.archiveimage {
   width: 94vh;
   padding: 0 6vh 0 0;
   background-color: #f4754d;
+  border-left:0;
 }
 
 .About .Leftsubtitle{
   width: 94vh;
   padding: 0 0vh 0 6vh;
   background-color: #f4754d;
+  border-right:0;
 
 }
 
@@ -733,6 +771,14 @@ img.archiveimage {
   font-family: RecklessNeue;
   font-size: 0.75em;
   letter-spacing: 0.01em;
+}
+
+@media only screen and (max-width:1000px){
+
+  .Footercontainer {
+    padding: 3vh 7vw 8vh 7vw;}
+
+
 }
 
 @media only screen and (max-width:800px){
@@ -892,11 +938,12 @@ img.archiveimage {
       }
 
       .col1{
-        width: 50vw;
+        width: 40vw;
       }
 
       .col3{
         display:block;
+        width:35vw;
       }
 
       .child1{
@@ -923,6 +970,9 @@ img.archiveimage {
         margin: 0 9% 7% 0;
     }
 
+    .socialgroup {
+      display: block;}
+
     /* archive page */
 
     .worklist,
@@ -948,6 +998,10 @@ img.archiveimage {
   width: 25%;
 }
 
+.lg-react-element{
+  pointer-events:none;
+}
+
 /* slug page */
 
 .productContainer{
@@ -959,11 +1013,42 @@ flex-direction: column-reverse;}
 }
 
 .workdetail{
-  width: 94vw !important;
+  width: 80vw !important;
 }
 
 .Worktitle{
   margin-bottom: 2vh;
 }
+
+}
+
+
+@media only screen and (max-width:600px){
+
+
+  .Home .title button.open,
+  .Collections .title button.open,
+  .About .title button.open,
+  .Archive .title button.open{
+    height:20px;
+  }
+
+
+}
+
+
+@media only screen and (max-width:400px){
+
+  
+
+
+  .Home .title button.open,
+  .Collections .title button.open,
+  .About .title button.open,
+  .Archive .title button.open{
+    height:18px;
+  }
+
+
 
 }
