@@ -80,7 +80,7 @@ const CollectionsPage = ({ properties }) => {
                      <>
                      <If condition={size === "shorter"}>
                      <div key={_id} className="shortBlock Collectionblock grid-item">
-                          <Link href="/collection/[slug]" as={`/collection/${slug.current}`}>
+                          <Link href="/collection/[slug]" as={`/collection/${slug.current}`} passHref>
                             <div className="pointer">
                             {collectionTitle && <div className="collectionTitle">{collectionTitle}</div>}
                             {collectionDesc && <div className="collectionDesc">{collectionDesc}</div>}
@@ -91,7 +91,7 @@ const CollectionsPage = ({ properties }) => {
 
                       <If condition={size === "longer"}>
                       <div key={_id} className="longBlock Collectionblock grid-item">
-                           <Link href="/collection/[slug]" as={`/collection/${slug.current}`}>
+                           <Link href="/collection/[slug]" as={`/collection/${slug.current}`} passHref>
                              <div className="pointer">
                              {collectionTitle && <div className="collectionTitle">{collectionTitle}</div>}
                              {collectionDesc && <div className="collectionDesc">{collectionDesc}</div>}

@@ -92,7 +92,7 @@ reverseScroll = {true}
                 <a key={_id} href={urlFor(mainImage).url()}>
                   <div className="workdetail" style={{ position: 'relative', width: '25vw', height: '80vh', marginRight: '10px' }} key={index}>
                     {mainImage && <Image className="placeholder"  src={urlFor(mainImage).url()} width="100%" height="100%" layout="fill" objectFit="cover" placeholder="blur"
- blurDataURL={rgbDataURL(73, 71, 63)}/> }
+ blurDataURL={rgbDataURL(73, 71, 63)}  alt={alt}/> }
  </div>
                 </a>
 
@@ -125,7 +125,7 @@ reverseScroll = {true}
                 <a key={_id} href={urlFor(mainImage).url()}>
                   <div className="workdetail" style={{ position: 'relative', width: '25vw', height: '80vh', marginRight: '10px' }} key={index}>
                     {mainImage && <Image className="placeholder"  src={urlFor(mainImage).url()} width="100%" height="100%" layout="fill" objectFit="cover" placeholder="blur"
- blurDataURL={rgbDataURL(73, 71, 63)}/> }
+ blurDataURL={rgbDataURL(73, 71, 63)}  alt={alt}/> }
  </div>
                 </a>
 

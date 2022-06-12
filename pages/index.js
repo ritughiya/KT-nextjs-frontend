@@ -40,6 +40,7 @@ const query = `*[_type == "homepage"] {
   rightColor,
   background,
   backgroundImage,
+  backgroundImagecaption,
   backgroundVideo
 }
 `
@@ -79,7 +80,7 @@ const IndexPage = ({ properties }) => {
 
           <Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
       "fill"
-    objectFit="cover" 
+    objectFit="cover" alt={post.backgroundImagecaption}
       />
 
       </If>

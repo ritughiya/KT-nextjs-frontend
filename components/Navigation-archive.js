@@ -84,9 +84,9 @@ import 'react-modern-drawer/dist/index.css'
       <div>
         <ul>
 
-        <Link href="/collections"><li>Collections</li></Link>
-        <Link href="/archive"><li>Archive</li></Link>
-        <Link href="/about"><li>About</li></Link>
+        <Link href="/collections" passHref><li>Collections</li></Link>
+        <Link href="/archive" passHref><li>Archive</li></Link>
+        <Link href="/about" passHref><li>About</li></Link>
 
         </ul>
         

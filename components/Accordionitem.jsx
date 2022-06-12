@@ -44,8 +44,8 @@
         </div>
       
         <div className={` archiveimagecontainer Workcontainer  ${show ? null : 'active'}`}>
-        {props.archiveimages && props.archiveimages.map(({_id, mainImage=''}) => (
-          <img key={_id} className="archiveimage placeholder"  src={urlFor(mainImage).url()}></img>
+        {props.archiveimages && props.archiveimages.map(({_id, mainImage='', alt=''}) => (
+          <img key={_id} className="archiveimage placeholder"  src={urlFor(mainImage).url()} alt={alt}></img>
         ))}</div>
       
         </div>
@@ -62,8 +62,8 @@
         </div>
       
         <div className={` archiveimagecontainer Workcontainer  ${show ? 'active': null}`}>
-        {props.archiveimages && props.archiveimages.map(({_id, mainImage=''}) => (
-          <img key={_id} className="archiveimage placeholder"  src={urlFor(mainImage).url()}></img>
+        {props.archiveimages && props.archiveimages.map(({_id, mainImage='', alt=''}) => (
+          <img key={_id} className="archiveimage placeholder"  src={urlFor(mainImage).url()} alt={alt}></img>
         ))}</div>
       
         </div>
