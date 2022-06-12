@@ -95,6 +95,21 @@ a {
   overflow:hidden;
 }
 
+.embed-container {
+  padding:56.25% 0 0 0;
+  position: relative;
+}
+ 
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @keyframes fade {
   from {
     opacity:0;
@@ -788,6 +803,10 @@ img.archiveimage {
 
   .mobile{
     display:block;
+  }
+
+  .lg-container.lg-show{
+    display:none !important;
   }
 
   .siteLogo{

@@ -7,7 +7,6 @@
  import Image from 'next/image'
  import styles from '../styles/Home.module.css'
  import React, { useEffect, useState, useCallback, useRef } from "react";
- import Link from 'next/link'
  import Script from 'next/script'
  import { sanityClient, urlFor} from '../sanity'
  import Static from 'next/image'

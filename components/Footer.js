@@ -5,7 +5,6 @@
  */
 
  import React from "react";
- import Link from 'next/link'
  import Head from 'next/head'
 
  
@@ -28,7 +27,8 @@
         <div className="col3">
             <div className="child1">Web design by Cristhian Sabogal<br></br>Development by Ritu Ghiya</div>
             <span className="mobile"><br></br></span>
-            <div className="child2">INSTAGRAM<br></br>email</div>
+            <div className="child2">
+            <a target="_blank" href="https://www.instagram.com/_kassandrathatcher_/" rel="noopener noreferrer">INSTAGRAM</a><br></br><a target="_blank" href="mailto:studio@kassandrathatcher.com" rel="noopener noreferrer">EMAIL</a></div>
 
         </div>
 

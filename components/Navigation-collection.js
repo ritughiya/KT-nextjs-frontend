@@ -36,21 +36,21 @@ import 'react-modern-drawer/dist/index.css'
 <div>
 <div className="desktop title">
             <div className="pageTitle">Collections</div>
-          <Link href="/">
-          <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app">KASSANDRA THATCHER STUDIO</Link></div>
+          <Link href="/" passHref>
+          <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app" passHref>KASSANDRA THATCHER STUDIO</Link></div>
           </Link>
           <div>&nbsp;</div>
           </div>
 <div className="linkframe desktop">
 
           <div className="horflex">
-          <Link href="/archive">
+          <Link href="/archive" passHref>
           <div className="subtitle Rightsubtitle pointer">
           Archive
           </div>
           </Link>
           </div>
-          <Link href="/about">
+          <Link href="/about" passHref>
           <div className="subtitle Bottomsubtitle pointer">
           Information
           </div>
@@ -80,9 +80,9 @@ import 'react-modern-drawer/dist/index.css'
                 <div>
                   <ul>
           
-                  <Link href="/collections"><li>Collections</li></Link>
-                  <Link href="/archive"><li>Archive</li></Link>
-                  <Link href="/about"><li>About</li></Link>
+                  <Link href="/collections" passHref><li>Collections</li></Link>
+                  <Link href="/archive" passHref><li>Archive</li></Link>
+                  <Link href="/about" passHref><li>About</li></Link>
 
                   </ul>
                   

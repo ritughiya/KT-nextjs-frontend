@@ -87,10 +87,13 @@ const IndexPage = ({ properties }) => {
 
 <If condition={post.background === "video"}>
 
-<Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
+{/* <Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
 "fill"
 objectFit="cover" 
-/>
+/> */}
+<div className="embed-container">
+<iframe loading="lazy" title="Video of Background" className="" src={post.backgroundVideo} width="640" height="360" frameBorder="0" allowFullScreen ></iframe>   
+</div>
 
 </If>
 
