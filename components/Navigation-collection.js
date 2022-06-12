@@ -44,18 +44,18 @@ import 'react-modern-drawer/dist/index.css'
 <div className="linkframe desktop">
 
           <div className="horflex">
-          
-          <div className="subtitle Rightsubtitle pointer">
           <Link href="/archive">
+          <div className="subtitle Rightsubtitle pointer">
           Archive
+          </div>
           </Link>
           </div>
-          </div>
-          <div className="subtitle Bottomsubtitle pointer">
           <Link href="/about">
+          <div className="subtitle Bottomsubtitle pointer">
           Information
-          </Link>
           </div>
+          </Link>
+
 
         </div>
         <div className="linkframe mobile">

@@ -41,17 +41,16 @@ import 'react-modern-drawer/dist/index.css'
           <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app">KASSANDRA THATCHER STUDIO</Link></div>
           </Link>
           </div>
-         
+          <Link href="/collections">
           <div className="subtitle Leftsubtitle pointer">
-            <Link href="/collections">
             Collections
-            </Link>
           </div>
-          <div className="subtitle Rightsubtitle pointer">
-          <Link href="/archive">
-          Archive
           </Link>
+          <Link href="/archive">
+          <div className="subtitle Rightsubtitle pointer">
+          Archive
           </div>
+          </Link>
 
 </div>
 <div className="linkframe mobile">
