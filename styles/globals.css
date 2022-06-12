@@ -395,6 +395,10 @@ a {
 
 }
 
+.lg-sub-html{
+  display:none;
+}
+
 .lg-counter{
   font-family: SctoGrotesk !important;
   letter-spacing: 0.01em !important;
