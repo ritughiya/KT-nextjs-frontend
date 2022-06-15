@@ -8,6 +8,8 @@ import React from "react";
 import Link from 'next/link'
 import Head from 'next/head'
 import { useState, useEffect, useCallback } from 'react';
+import Div100vh from 'react-div-100vh'
+
 
 // import component 👇
 import Drawer from 'react-modern-drawer'
@@ -78,6 +80,7 @@ export default function Navigation() {
               height='94vh'
             >
               <div>
+                <Div100vh>
                 <ul>
 
                   <Link href="/collections" passHref><li>Collections</li></Link>
@@ -85,6 +88,7 @@ export default function Navigation() {
                   <Link href="/about" passHref><li>About</li></Link>
 
                 </ul>
+                </Div100vh>
 
               </div>
             </Drawer>
