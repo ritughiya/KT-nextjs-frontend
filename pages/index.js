@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import React, { useEffect, useState } from "react";
 import Link from 'next/link'
 import Script from 'next/script'
-import { sanityClient, urlFor} from '../sanity'
+import { sanityClient, urlFor } from '../sanity'
 import Static from 'next/image'
 import Customhead from "../components/Customhead"
 
@@ -23,8 +23,7 @@ const triplet = (e1, e2, e3) =>
   keyStr.charAt(e3 & 63)
 
 const rgbDataURL = (r, g, b) =>
-  `data:image/gif;base64,R0lGODlhAQABAPAA${
-    triplet(0, r, g) + triplet(b, 255, 255)
+  `data:image/gif;base64,R0lGODlhAQABAPAA${triplet(0, r, g) + triplet(b, 255, 255)
   }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`
 
 
@@ -64,7 +63,7 @@ const IndexPage = ({ properties }) => {
     setCount(pageView);
   }, []); //No dependency to trigger in each page load
 
-  
+
 
   return (
     <div className=" Home wrapper">
@@ -72,42 +71,42 @@ const IndexPage = ({ properties }) => {
       <Navigation />
 
       {properties.map(post => (
-              
+
         <div key={post._id}>
           <>
 
-<If condition={post.background === "image"}>
+            <If condition={post.background === "image"}>
 
-          <Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
-      "fill"
-    objectFit="cover" alt={post.backgroundImagecaption}
-      />
+              <Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
+                "fill"
+                objectFit="cover" alt={post.backgroundImagecaption}
+              />
 
-      </If>
+            </If>
 
 
-<If condition={post.background === "video"}>
+            <If condition={post.background === "video"}>
 
-{/* <Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
+              {/* <Image className="Homebackground" draggable="false" src={urlFor(post.backgroundImage).url()} layout=
 "fill"
 objectFit="cover" 
 /> */}
-<div className="embed-container">
-<iframe loading="lazy" title="Video of Background" className="" src={post.backgroundVideo} width="640" height="360" frameBorder="0" allowFullScreen ></iframe>   
-</div>
+              <div className="embed-container">
+                <iframe loading="lazy" title="Video of Background" className="" src={post.backgroundVideo} width="640" height="360" frameBorder="0" allowFullScreen ></iframe>
+              </div>
 
-</If>
+            </If>
 
-      </>
-      </div>
-      
-      
-            ))}
+          </>
+        </div>
 
-      
 
-      
-      
+      ))}
+
+
+
+
+
     </div>
   )
 
