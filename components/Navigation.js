@@ -63,7 +63,7 @@ export default function Navigation() {
       <div className="linkframe mobile">
 
         <div className={`title ${isActive ? 'porcelain' : null}`}>
-          <div className="siteLogo pointer">KASSANDRA THATCHER STUDIO</div>
+          <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app" passHref>KASSANDRA THATCHER STUDIO</Link></div>
 
           <div className="h2">
             <button className={` ${isActive ? 'open' : null}`} onClick={toggleDrawer}>
