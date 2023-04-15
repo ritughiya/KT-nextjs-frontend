@@ -8,7 +8,7 @@ import { sanityClient, urlFor } from '../sanity'
 import Static from 'next/image'
 import Customhead from "../components/Customhead"
 import PortableText from '@sanity/block-content-to-react'
-import Footer from "../components/Footer"
+import Footer from "../components/Footerexpanded"
 import Navigationinfo from "../components/Navigation-info"
 
 // import component 👇
@@ -21,9 +21,14 @@ const query = `*[_type == "aboutpage"] {
   pageTitle,
   pageColor,
     abouttext,
+    igdemo,
     instagram,
     linkedin,
     email,
+    press[]->{
+      publication,
+      articletitle
+    },
     stockists[]->{
       city,
       storename
@@ -82,8 +87,8 @@ const AboutPage = ({ properties }) => {
           <div className="About wrapper" style={{ backgroundColor: `#${post.pageColor}` }} >
             <Customhead />
             <Head>
-              <title>About | Kassandra Thatcher</title>
-              <meta property="og:title" content="About | Kassandra Thatcher" key="title" />
+              <title>Information | Kassandra Thatcher</title>
+              <meta property="og:title" content="Information | Kassandra Thatcher" key="title" />
             </Head>
 
             <div>
@@ -112,7 +117,7 @@ const AboutPage = ({ properties }) => {
 
                           <Link href="/collections" passHref><li>Collections</li></Link>
                           <Link href="/archive" passHref><li>Archive</li></Link>
-                          <Link href="/about" passHref><li>About</li></Link>
+                          <Link href="/information" passHref><li>Information</li></Link>
 
                         </ul>
 
@@ -147,7 +152,7 @@ const AboutPage = ({ properties }) => {
 
             </div>
 
-            <div className="Aboutdesc description">
+            <div className="Aboutdesc ">
               <div className="Abouthed">About</div>
               <div className="Abouttxt">
 
@@ -159,51 +164,65 @@ const AboutPage = ({ properties }) => {
               </div>
             </div>
 
-            <div className="Aboutdesc contactdesc description">
+
+
+            <div className="Aboutdesc contactdesc">
               <div className="Abouthed">Contact</div>
               <div className="Abouttxt">
+              {post.instagram &&
                 <div className="socialgroup">
                   <div className="Aboutsocial1">
                     Instagram
                   </div>
                   <div className="Aboutsocial2">
-                    {post.instagram &&
-                      <PortableText
-                        blocks={post.instagram}
-                        serializers={serializers}
-                      />}
+                  <PortableText
+                    blocks={post.instagram}
+                    serializers={serializers}
+                  />
+                      
                   </div>
                 </div>
+}
 
+{post.linkedin &&
                 <div className="socialgroup">
                   <div className="Aboutsocial1">
                     LinkedIn
                   </div>
                   <div className="Aboutsocial2">
-                    {post.linkedin &&
-                      <PortableText
-                        blocks={post.linkedin}
-                        serializers={serializers}
-                      />}
+                  <PortableText
+                    blocks={post.linkedin}
+                    serializers={serializers}
+                  />
+                      
                   </div>
                 </div>
+}
 
+{post.email &&
                 <div className="socialgroup">
                   <div className="Aboutsocial1">
                     Email
                   </div>
                   <div className="Aboutsocial2">
-                    {post.email &&
-                      <PortableText
-                        blocks={post.email}
-                        serializers={serializers}
-                      />}
+                  <PortableText
+                    blocks={post.email}
+                    serializers={serializers}
+                  />
+                      
                   </div>
                 </div>
+}
+
+
+
+
+
+
               </div>
             </div>
 
-            <div className="Aboutdesc contactdesc description">
+            <div className="Aboutdesc stockdesc ">
               <div className="Abouthed">Stockists</div>
               <div className="Abouttxt stockistflex">
                 {post.stockists && post.stockists.map(({ _id, city = '', storename = '' }) => (
@@ -219,6 +238,25 @@ const AboutPage = ({ properties }) => {
 
 
                 ))}</div></div>
+
+            <div className="Aboutdesc pressdesc ">
+              <div className="Abouthed">Press</div>
+              <div className="Abouttxt pressflex">
+                {post.press && post.press.map(({ _id, publication = '', articletitle = '' }) => (
+
+                  <div key={_id} className="pubgroup">
+                    <div className="publication">{publication}</div>
+                    <div className="pubtitle"><PortableText
+                      blocks={articletitle}
+                      serializers={serializers}
+                    /></div>
+                  </div>
+
+
+
+                ))}</div></div>
+
+
 
 
           </div>
@@ -245,7 +283,7 @@ const AboutPage = ({ properties }) => {
 }
 
 export const getServerSideProps = async () => {
-  const query = '*[ _type == "aboutpage"]{pageTitle, pageColor, abouttext, instagram, linkedin, email, stockists[]->}'
+  const query = '*[ _type == "aboutpage"]{pageTitle, pageColor, abouttext, instagram, linkedin, email, stockists[]->, press[]->}'
   const properties = await sanityClient.fetch(query)
 
   if (!properties.length) {

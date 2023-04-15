@@ -49,7 +49,6 @@ const rgbDataURL = (r, g, b) =>
 
 
 
-
 const Carousel = ({ slides }) => {
 
 
@@ -89,7 +88,7 @@ const Carousel = ({ slides }) => {
 
                   {slides.slideshow.map(({ _id, mainImage = '', alt = '' }, index) => (
                     <a key={_id} href={urlFor(mainImage).url()}>
-                      <div className="workdetail" style={{ position: 'relative', width: '25vw', height: '80vh', marginRight: '10px' }} key={index}>
+                      <div className="workdetail" style={{ position: 'relative', width: '405px', height: '582px', marginRight: '30px' }} key={index}>
                         {mainImage && <Image className="placeholder" src={urlFor(mainImage).url()} width="100%" height="100%" layout="fill" objectFit="cover" placeholder="blur"
                           blurDataURL={rgbDataURL(73, 71, 63)} alt={alt} />}
                       </div>
@@ -122,7 +121,7 @@ const Carousel = ({ slides }) => {
 
                   {slides.slideshow.map(({ _id, mainImage = '', alt = '' }, index) => (
                     <a key={_id} href={urlFor(mainImage).url()}>
-                      <div className="workdetail" style={{ position: 'relative', width: '25vw', height: '80vh', marginRight: '10px' }} key={index}>
+                      <div className="workdetail" style={{ position: 'relative', width: '405px', height: '582px', marginRight: '30px' }} key={index}>
                         {mainImage && <Image className="placeholder" src={urlFor(mainImage).url()} width="100%" height="100%" layout="fill" objectFit="cover" placeholder="blur"
                           blurDataURL={rgbDataURL(73, 71, 63)} alt={alt} />}
                       </div>

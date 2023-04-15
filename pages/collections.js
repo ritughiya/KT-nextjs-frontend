@@ -7,7 +7,7 @@ import Script from 'next/script'
 import { sanityClient, urlFor } from '../sanity'
 import Static from 'next/image'
 import Customhead from "../components/Customhead"
-import Footer from "../components/Footer"
+import Footer from "../components/Footerleft"
 import Masonry from 'react-masonry-css'
 import Navigationcollection from "../components/Navigation-collection"
 
@@ -26,7 +26,6 @@ const query = `*[_type == "collectionspage"] {
   pageColor,
   collections[]->{
     collectionTitle,
-    collectionDesc,
     size,
     backgroundImage
   }
@@ -94,7 +93,7 @@ const CollectionsPage = ({ properties }) => {
 
                           <Link href="/collections" passHref><li>Collections</li></Link>
                           <Link href="/archive" passHref><li>Archive</li></Link>
-                          <Link href="/about" passHref><li>About</li></Link>
+                          <Link href="/information" passHref><li>Information</li></Link>
 
                         </ul>
 
@@ -110,7 +109,11 @@ const CollectionsPage = ({ properties }) => {
             </div>
 
             <div className="desktop title" style={{ backgroundColor: `#${post.pageColor}` }}>
-              <div className="pageTitle"  >Collections</div>
+              <div className="pageTitle"  >
+              <Link href="/collections" passHref>
+Collections
+</Link>
+</div>
               <Link href="/" passHref>
                 <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app" passHref>KASSANDRA THATCHER STUDIO</Link></div>
               </Link>
@@ -125,7 +128,7 @@ const CollectionsPage = ({ properties }) => {
                   </div>
                 </Link>
               </div>
-              <Link href="/about" passHref>
+              <Link href="/information" passHref>
                 <div className="subtitle Bottomsubtitle pointer" style={{ backgroundColor: `#${post.pageColor}` }}>
                   Information
                 </div>
@@ -141,7 +144,7 @@ const CollectionsPage = ({ properties }) => {
                 breakpointCols={breakpointColumnsObj}
                 className="my-masonry-grid"
                 columnClassName="my-masonry-grid_column">
-                {post.collections && post.collections.map(({ _id, slug = '', collectionTitle = '', collectionDesc = '', size = '', backgroundImage = '' }) => (
+                {post.collections && post.collections.map(({ _id, slug = '', collectionTitle = '', size = '', backgroundImage = '' }) => (
                   <>
                     <If condition={size === "shorter"}>
                       <div key={_id} className="shortBlock Collectionblock grid-item">
@@ -154,7 +157,6 @@ const CollectionsPage = ({ properties }) => {
                           <Link href="/collection/[slug]" as={`/collection/${slug.current}`} passHref>
                             <div className="pointer">
                               {collectionTitle && <div className="collectionTitle">{collectionTitle}</div>}
-                              {collectionDesc && <div className="collectionDesc">{collectionDesc}</div>}
                             </div>
                           </Link>
                         </div>
@@ -172,7 +174,6 @@ const CollectionsPage = ({ properties }) => {
                           <Link href="/collection/[slug]" as={`/collection/${slug.current}`} passHref>
                             <div className="pointer">
                               {collectionTitle && <div className="collectionTitle">{collectionTitle}</div>}
-                              {collectionDesc && <div className="collectionDesc">{collectionDesc}</div>}
                             </div>
                           </Link>
                         </div>

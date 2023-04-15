@@ -53,7 +53,7 @@ export default function Navigation() {
             </div>
           </Link>
         </div>
-        <Link href="/about" passHref>
+        <Link href="/information" passHref>
           <div className="subtitle Bottomsubtitle pointer">
             Information
           </div>
@@ -85,7 +85,7 @@ export default function Navigation() {
 
                   <Link href="/collections" passHref><li>Collections</li></Link>
                   <Link href="/archive" passHref><li>Archive</li></Link>
-                  <Link href="/about" passHref><li>About</li></Link>
+                  <Link href="/information" passHref><li>Information</li></Link>
 
                 </ul>
                 </Div100vh>

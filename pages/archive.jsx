@@ -7,7 +7,7 @@ import Script from 'next/script'
 import { sanityClient, urlFor } from '../sanity'
 import Static from 'next/image'
 import Customhead from "../components/Customhead"
-import Footer from "../components/Footer"
+import Footer from "../components/Footerright"
 import Navigationarchive from "../components/Navigation-archive"
 import Accordionitem from "../components/Accordionitem.jsx"
 
@@ -88,7 +88,7 @@ const ArchivePage = ({ properties }) => {
 
                           <Link href="/collections" passHref><li>Collections</li></Link>
                           <Link href="/archive" passHref><li>Archive</li></Link>
-                          <Link href="/about" passHref><li>About</li></Link>
+                          <Link href="/information" passHref><li>Information</li></Link>
 
                         </ul>
 
@@ -121,7 +121,7 @@ const ArchivePage = ({ properties }) => {
                   Archive
                 </div>
               </Link>
-              <Link href="/about" passHref>
+              <Link href="/information" passHref>
                 <div className="subtitle Bottomsubtitle pointer" style={{ backgroundColor: `#${post.pageColor}` }}>
                   Information
                 </div>

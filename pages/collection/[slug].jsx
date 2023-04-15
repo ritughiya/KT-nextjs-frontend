@@ -7,7 +7,7 @@ import Customhead from "../../components/Customhead"
 import Head from 'next/head'
 import PortableText from '@sanity/block-content-to-react'
 import Navigationcollection from "../../components/Navigation-collection"
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footerleft"
 import Slider from "../../components/Carousel"
 
 import LightGallery from 'lightgallery/react';
@@ -105,7 +105,7 @@ const Collection = ({
 
                       <Link href="/collections" passHref><li>Collections</li></Link>
                       <Link href="/archive" passHref><li>Archive</li></Link>
-                      <Link href="/about" passHref><li>About</li></Link>
+                      <Link href="/information" passHref><li>Information</li></Link>
 
                     </ul>
 
@@ -121,7 +121,11 @@ const Collection = ({
         </div>
 
         <div className="desktop title" >
-          <div className="pageTitle"  >Collections</div>
+          <div className="pageTitle"  >
+          <Link href="/collections" passHref>
+Collections
+</Link>
+</div>
           <Link href="/" passHref>
             <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app" passHref>KASSANDRA THATCHER STUDIO</Link></div>
           </Link>
@@ -136,7 +140,7 @@ const Collection = ({
               </div>
             </Link>
           </div>
-          <Link href="/about" passHref>
+          <Link href="/information" passHref>
             <div className="subtitle Bottomsubtitle pointer" >
               Information
             </div>
@@ -154,20 +158,40 @@ const Collection = ({
 
             <div>
 
-              {selectedWorks && selectedWorks.map(({ _id = '', category = '', title = '', description = '', specsheet = '', slideshow = '' }) => (
+              {selectedWorks && selectedWorks.map(({ _id = '', category = '', title = '', description = '', material='', dimensions='', shade='', specsheet = '', slideshow = '' }) => (
                 <div key={_id} className="copy Workborder">
-                  <div className="category mobile">{category && category}</div>
+                  {category && <div className="category mobile">{category}</div> }
                   <div className="Worktitle mobile">{title && title}</div>
                   <div className="productContainer">
                     <div className="flexLeft">
-                      <div className="category desktop">{category && category}</div>
+                      <div className="block">
+                        <div className="Titleflex">
                       <div className="Worktitle desktop">{title && title}</div>
+                      {category && <div className="category desktop">{category}</div> }
+                      </div>
+
 
                       {description && <div className="description">
                         <PortableText
                           blocks={description}
                         /></div>}
+                      {material && <div className="material">
+                        <div className="subhed">Material</div>
+                        <PortableText
+                          blocks={material}
+                        /></div>}
+                      {dimensions && <div className="dimensions">
+                      <div className="subhed">Dimensions</div>
+                        <PortableText
+                          blocks={dimensions}
+                        /></div>}  
+                      {shade && <div className="shade">
+                      <div className="subhed">Shade</div>
+                        <PortableText
+                          blocks={shade}
+                        /></div>}                    
 
+                      </div>
                       <div className="blockContainer">
 
                         <div className="inquireBlock">
@@ -219,6 +243,9 @@ export const getServerSideProps = async (pageContext) => {
         selectedWorks[]->{
             title,
             description,
+            material,
+            dimensions,
+            shade,
             year,
             category,
             status,
