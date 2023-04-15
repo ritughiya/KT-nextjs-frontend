@@ -18,12 +18,12 @@ export default function Footer() {
       <div className="Footerright">
 
         <div className="">
-          <a target="_blank" href="https://www.instagram.com/_kassandrathatcher_/">
+          <a target="_blank" rel="noreferrer"  href="https://www.instagram.com/_kassandrathatcher_/">
           Instagram
           </a>
         </div>
         <div className="">
-        <a target="_blank" href="mailto:kt@kassandrathatcher.com">
+        <a target="_blank" rel="noreferrer"  href="mailto:kt@kassandrathatcher.com">
           Contact
           </a>
         </div>

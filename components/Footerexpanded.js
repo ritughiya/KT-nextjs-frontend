@@ -18,7 +18,7 @@ export default function Footer() {
       <div className="Footerexpanded">
 
         <div className="flex text">
-            <div class="subtext">
+            <div className="subtext">
             All photography Kassandra Thatcher Studio unless otherwise noted. The MA SCONCE Collection and “Somethings a little angular about her” collection are photographed by Clayton Cotterell.
             </div>
             <div  className="links">
