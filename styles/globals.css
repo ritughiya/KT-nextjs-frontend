@@ -1,16 +1,16 @@
 @font-face {
   font-family: RecklessNeue;
-  src: url(RecklessNeue-Regular.otf);
+  src: url(RecklessNeue-Regular.woff);
 }
 
 @font-face {
   font-family: SctoGroteskreg;
-  src: url(SctoGroteskA-Regular.otf);
+  src: url(SctoGroteskA-Regular.woff);
 }
 
 @font-face {
   font-family: SctoGroteskmed;
-  src: url(SctoGroteskA-Medium.otf);
+  src: url(SctoGroteskA-Medium.woff);
 }
 
 ::selection {
@@ -30,6 +30,8 @@ body {
   margin: 0;
   font-family: SctoGroteskreg;
   color: #2C2913;
+  font-smooth: auto !important;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 a {
@@ -632,7 +634,7 @@ a {
 .shade {
   line-height: 1.5;
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   font-family: SctoGroteskreg;
   font-size:0.8em;
   border-top:1px solid #2C2913;
@@ -822,21 +824,27 @@ button {
   /* width: 88vw; */
   /* margin-left: 12vw; */
   border-bottom: 1px solid #2c2913;
-  height: 4vh;
-  padding: 1vw;
+  padding: 12px 26px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  letter-spacing: 0.1em;
-  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  font-size: 11px;
   align-items: center;
 }
 
 .Workcontainer {
-  padding: 1vw;
+  padding: 15px 26px;
   width: 100%;
   line-height: 1.35;
   max-height: 1000px;
   transition: max-height 1s ease-in-out;
+}
+
+.active.Workcontainer .Workstatus{
+  color: #97948F;
+}
+
+.active.archiveimagecontainer{
+  padding-top:120px;
 }
 
 .Workborder {
@@ -855,12 +863,12 @@ button {
 
 .subyear,
 .Workyear {
-  width: 15%;
+  width: 10%;
 }
 
 .subproject,
 .Workproject {
-  width: 23%;
+  width: 30%;
 
 }
 
@@ -881,6 +889,21 @@ button {
 
 }
 
+.Workyear,
+.Workcat,
+.Workdims{
+  font-size:35px;
+}
+
+.Workproject{
+  font-size:35px;
+  font-family: RecklessNeue;
+}
+
+.Workstatus{
+  font-size:25px;
+}
+
 
 
 .Workyear,
@@ -889,8 +912,9 @@ button {
 .Workstatus,
 .Workproject {
   letter-spacing: -0.02em;
-  font-size: 2em;
   padding-right: 2%;
+  line-height:1;
+
 
 }
 
@@ -960,7 +984,7 @@ img.archiveimage {
 }
 
 .Aboutdesc {
-  padding: 10vw 5vw 5vw 5vw;
+  padding: 11vw 5vw 5vw 5vw;
   justify-content: space-between;
   display: flex;
 }
@@ -977,9 +1001,9 @@ img.archiveimage {
 .Abouttxt {
   font-family: SctoGroteskreg;
   width: 70%;
-  font-size: 37px;
-  line-height: 46px;
-  letter-spacing: -0.02em;
+  font-size: 34px;
+  line-height: 40px;
+  letter-spacing: -0.03em;
 }
 
 
@@ -1072,6 +1096,18 @@ img.archiveimage {
     justify-content: space-between;
   }
 
+  .solid{
+    background-color: #f9f7f4;
+  }
+
+  .Home .green{
+    border-bottom: 1px solid #2C2913;
+  }
+
+  .green .siteLogo{
+    color: #2c2913 !important;
+  }
+
   button {
     background-color: transparent !important;
     border-style: none !important;
@@ -1096,12 +1132,35 @@ img.archiveimage {
     height: 20px;
   }
 
+
   .h2 {
     height: 6vh;
     display: flex;
     padding: auto;
-    border-left: 1px solid #2c2913;
+    border-left: 1px solid #f9f7f4;
     padding-left: 2vw;
+  }
+
+  .green .h2{
+    border-left: 1px solid #2C2913;  
+  }
+
+  .Collections .h2,
+  .Archive .h2,
+  .About .h2{
+    border-left: 1px solid #2C2913;  
+  }
+
+  .Collections .bar-one,
+  .Collections .bar-two,
+  .Collections .bar-three,
+  .Archive .bar-one,
+  .Archive .bar-two,
+  .Archive .bar-three,
+  .About .bar-one,
+  .About .bar-two,
+  .About .bar-three {
+    background: #2C2913;
   }
 
   .bar-one,
@@ -1109,11 +1168,12 @@ img.archiveimage {
   .bar-three {
     width: 27px;
     height: 1px;
-    background: #2c2913;
+    background: #f9f7f4;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
   }
+
 
   .bar-one {
     transform: rotate(0);
@@ -1128,19 +1188,13 @@ img.archiveimage {
     transform: rotate(0);
   }
 
-  .open .bar-one {
-
-    transform: rotate(46deg);
-  }
-
-  .open .bar-two {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-
+  .open .bar-one,
+  .open .bar-two,
   .open .bar-three {
-    transform: rotate(-45deg);
+    background: #2C2913;
   }
+
+
 
   .EZDrawer .EZDrawer__container {
     width: 100%;
@@ -1173,6 +1227,7 @@ img.archiveimage {
     font-family: RecklessNeue;
     font-size: 1.75em;
     transition: 0.3s;
+    color: #2c2913;
   }
 
   .EZDrawer ul li:hover {

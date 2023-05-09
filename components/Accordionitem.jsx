@@ -51,7 +51,7 @@ const Accordionitem = (props) => {
         </div>
       </If>
       <If condition={props.archivestatus === null}>
-        <div className={`Workcontainer Workborder ${show ? 'porcelain' : null}`}>
+        <div className={`Workcontainer Workborder ${show ? 'porcelain active' : null}`}>
           <div className={`Workitem ${show ? 'porcelain' : null}`} onClick={handleOpen}>
             {props.year && <div className="Workyear">{props.year}</div>}
             {props.title && <div className="Workproject">{props.title}</div>}
@@ -61,7 +61,7 @@ const Accordionitem = (props) => {
 
           </div>
 
-          <div className={` archiveimagecontainer Workcontainer  ${show ? 'active' : null}`}>
+          <div className={` archiveimagecontainer  ${show ? 'active' : null}`}>
             {props.archiveimages && props.archiveimages.map(({ _id, mainImage = '', alt = '' }) => (
               <img key={_id} className="archiveimage placeholder" src={urlFor(mainImage).url()} alt={alt}></img>
             ))}</div>

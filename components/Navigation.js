@@ -60,9 +60,9 @@ export default function Navigation() {
         </Link>
 
       </div>
-      <div className="linkframe mobile">
+      <div className={`linkframe mobile ${isActive ? 'solid' : null}`}>
 
-        <div className={`title ${isActive ? 'porcelain' : null}`}>
+        <div className={`title ${isActive ? 'green' : null}`}>
           <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app" passHref>KASSANDRA THATCHER STUDIO</Link></div>
 
           <div className="h2">
