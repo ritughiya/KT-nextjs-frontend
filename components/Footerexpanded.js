@@ -2,45 +2,84 @@
 
 /**
  * @jest-environment jsdom
- */
+ */ 
 
 import React from "react";
 import Head from 'next/head'
 import Link from "next/link"
+import PortableText from '@sanity/block-content-to-react'
 
+const serializers = {
+  types: {
+    code: (props) => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+  marks: {
 
+    link: ({ mark, children }) => {
+      // Read https://css-tricks.com/use-target_blank/
+      const { blank, href } = mark
+      return blank ?
+        <a href={href} target="_blank" rel="noreferrer">{children}</a>
+        : <a href={href}>{children}</a>
+    }
+  }
+}
 
-export default function Footer() {
+const Footer = (props) => {
+
 
 
   return (
+
+
     <div>
       <div className="Footerexpanded">
 
         <div className="flex text">
             <div className="subtext">
-            All photography Kassandra Thatcher Studio unless otherwise noted. The MA SCONCE Collection and “Somethings a little angular about her” collection are photographed by Clayton Cotterell.
-            </div>
+            <PortableText
+                    blocks={props.notes}
+                    serializers={serializers}
+                  />            </div>
             <div  className="links">
                 <div>
-                Instagram
+                <PortableText
+                    blocks={props.instagram}
+                    serializers={serializers}
+                  />
                 </div>
                 <div>
-                Email
+                <PortableText
+                    blocks={props.email}
+                    serializers={serializers}
+                  />
                 </div>
                 <div>
-                Privacy Policy
+                <PortableText
+                    blocks={props.privacyPolicy}
+                    serializers={serializers}
+                  />
                 </div>
             </div>
         </div>
 
         <div className="flexbetween">
             <div className="footerlogo">
-            KASSANDRA THATCHER STUDIO 
+            {props.title}
             </div>
             <div className="credits">
-            Web design by Cristhian Sabogal<br>
-            </br>site Development by Ritu Ghiya
+            <PortableText
+                    blocks={props.credits1}
+                    serializers={serializers}
+                  />
+            <PortableText
+                    blocks={props.credits2}
+                    serializers={serializers}
+                  />
             </div>
         </div>
 
@@ -49,8 +88,10 @@ export default function Footer() {
 
     </div>
 
-  );
+  )
 }
 
 
 
+
+export default Footer

@@ -7,25 +7,47 @@
 import React from "react";
 import Head from 'next/head'
 import Link from "next/link"
+import PortableText from '@sanity/block-content-to-react'
 
 
+const serializers = {
+  types: {
+    code: (props) => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+  marks: {
 
-export default function Footer() {
+    link: ({ mark, children }) => {
+      // Read https://css-tricks.com/use-target_blank/
+      const { blank, href } = mark
+      return blank ?
+        <a href={href} target="_blank" rel="noreferrer">{children}</a>
+        : <a href={href}>{children}</a>
+    }
+  }
+}
 
+const Footer = (props) => {
 
   return (
+
     <div>
       <div className="Footerright">
 
         <div className="">
-          <a target="_blank" rel="noreferrer"  href="https://www.instagram.com/_kassandrathatcher_/">
-          Instagram
-          </a>
+        <PortableText
+                    blocks={props.instagram}
+                    serializers={serializers}
+                  />
         </div>
         <div className="">
-        <a target="_blank" rel="noreferrer"  href="mailto:kt@kassandrathatcher.com">
-          Contact
-          </a>
+        <PortableText
+                    blocks={props.email}
+                    serializers={serializers}
+                  />
         </div>
 
 
@@ -39,3 +61,4 @@ export default function Footer() {
 
 
 
+export default Footer

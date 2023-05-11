@@ -34,7 +34,7 @@ const query = `*[_type == "archivepage"] {
 }
 `
 
-const ArchivePage = ({ properties }) => {
+const ArchivePage = ({ properties, footerproperties }) => {
 
   const [isOpen, setIsOpen] = useState(false)
   const [isActive, setActive] = useState(false)
@@ -158,32 +158,31 @@ const ArchivePage = ({ properties }) => {
               }
             </div>
           </div>
+          </div>
 
 
-          <div className="Footercontainer" style={{ backgroundColor: `#${post.pageColor}` }}>
-            <Footer /></div>
+          ))}
 
-        </div>
+<div className="Archivefooter Footercontainer"> 
 
-
-
+         {footerproperties.map(({ _id, title = '', notes= '', instagram = '', email='', privacyPolicy ='', credits1 = '', credits2 = ''}, index) => (
 
 
+<div key={index}>
+           <Footer instagram={instagram} email={email} />
+    </div>
 
-      ))}
+
+
+
+               ))}
+
+
+
+
+    </div>
 
     </>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -195,6 +194,10 @@ export const getServerSideProps = async () => {
   const query = '*[ _type == "archivepage"]{pageTitle, pageColor, selectedWorks[]->{year, title, category, dimensions, status, archivestatus, archiveimages[]->, includedcollection[]->}}'
   const properties = await sanityClient.fetch(query)
 
+  const footerquery = `*[_type == "footer" ]{title, notes, instagram, email, privacyPolicy, credits1, credits2}`
+  const footerproperties = await sanityClient.fetch(footerquery)
+
+
   if (!properties.length) {
     return {
       props: {
@@ -205,6 +208,7 @@ export const getServerSideProps = async () => {
     return {
       props: {
         properties,
+        footerproperties,
       },
     }
   }

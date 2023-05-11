@@ -225,7 +225,7 @@ Collections
 
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
 
 
     </div>

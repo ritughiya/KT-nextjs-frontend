@@ -57,7 +57,7 @@ const serializers = {
 }
 
 
-const AboutPage = ({ properties }) => {
+const AboutPage = ({ properties,footerproperties }) => {
 
   console.log(properties)
 
@@ -260,18 +260,26 @@ const AboutPage = ({ properties }) => {
 
 
           </div>
+          </div>
 
-          <div className="Footercontainer" style={{ backgroundColor: `#${post.pageColor}` }}>
-            <Footer /></div>
+                ))}
 
-        </div>
+ <div className="Footercontainer" > 
 
-
-
-
-      ))}
+          {/* <div className="Footercontainer" style={{ backgroundColor: `#${post.pageColor}` }}> */}
+          {footerproperties.map(({ _id, title = '', notes= '', instagram = '', email='', privacyPolicy ='', credits1 = '', credits2 = ''}, index) => (
 
 
+<div key={index}>
+            <Footer title={title} notes={notes} instagram={instagram} email={email} privacyPolicy={privacyPolicy} credits1={credits1} credits2={credits2} /></div>
+
+
+
+
+                ))}
+
+
+</div>
 
 
 
@@ -286,6 +294,10 @@ export const getServerSideProps = async () => {
   const query = '*[ _type == "aboutpage"]{pageTitle, pageColor, abouttext, instagram, linkedin, email, stockists[]->, press[]->}'
   const properties = await sanityClient.fetch(query)
 
+  const footerquery = `*[_type == "footer" ]{title, notes, instagram, email, privacyPolicy, credits1, credits2}`
+  const footerproperties = await sanityClient.fetch(footerquery)
+
+
   if (!properties.length) {
     return {
       props: {
@@ -296,6 +308,7 @@ export const getServerSideProps = async () => {
     return {
       props: {
         properties,
+        footerproperties,
       },
     }
   }

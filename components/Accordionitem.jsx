@@ -33,8 +33,8 @@ const Accordionitem = (props) => {
 
     <>
       <If condition={props.archivestatus === "open"}>
-        <div className={`Workcontainer Workborder ${show ? null : 'porcelain'}`}>
-          <div className={`Workitem ${show ? null : 'porcelain'}`} onClick={handleOpen}>
+        <div className={`Workcontainer Workborder ${show ? null : 'porcelain'}`}  onClick={handleOpen}>
+          <div className={`Workitem ${show ? null : 'porcelain'}`}>
             {props.year && <div className="Workyear">{props.year}</div>}
             {props.title && <div className="Workproject">{props.title}</div>}
             {props.category && <div className="Workcat">{props.category}</div>}
@@ -51,8 +51,8 @@ const Accordionitem = (props) => {
         </div>
       </If>
       <If condition={props.archivestatus === null}>
-        <div className={`Workcontainer Workborder ${show ? 'porcelain active' : null}`}>
-          <div className={`Workitem ${show ? 'porcelain' : null}`} onClick={handleOpen}>
+        <div className={`Workcontainer Workborder ${show ? 'porcelain active' : null}`}  onClick={handleOpen}>
+          <div className={`Workitem ${show ? 'porcelain' : null}`}>
             {props.year && <div className="Workyear">{props.year}</div>}
             {props.title && <div className="Workproject">{props.title}</div>}
             {props.category && <div className="Workcat">{props.category}</div>}

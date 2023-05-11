@@ -41,7 +41,7 @@ a {
 
 
 .Footerexpanded {
-  padding: 30px 60px 100px 60px;
+  padding: 0;
 }
 
 .Footerexpanded .text{
@@ -78,6 +78,7 @@ a {
   font-family: 'SctoGroteskmed';
   line-height: 1;
   width: 45vw;
+  text-transform: uppercase;
 }
 
 .Footerexpanded .credits{
@@ -89,6 +90,11 @@ a {
   margin: 0 0% 0 15vw;
 }
 
+.Footerexpanded p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 
 
 .Footerleft{
@@ -96,7 +102,7 @@ a {
 
   justify-content: space-between;
   align-items: center;
-  padding: 30px 60px 100px 30px;
+  /* padding: 30px 60px 100px 30px; */
 }
 
 .Footerleft div a,
@@ -112,7 +118,7 @@ a {
   
     justify-content: space-between;
     align-items: center;
-    padding: 30px 30px 100px 60px;
+    /* padding: 30px 30px 100px 60px; */
   }
 
 
@@ -132,7 +138,12 @@ a {
 
 .Footercontainer {
   border-top: 1px solid #2C2913;
+    padding: 3vh 6vw 12vh 6vw;
+  
+}
 
+.Archivefooter.Footercontainer{
+  border-top: none;
 }
 
 .Archive .Footercontainer,
@@ -391,6 +402,10 @@ a {
 }
 
 /* Collections Page */
+
+.Collections{
+  padding-bottom:6vh;
+}
 
 .Collectiondetail .Leftsubtitle,
 .Collectiondetail .Rightsubtitle,
@@ -711,6 +726,7 @@ button {
   border-style: none;
   color: #2c2913;
   font-size: 1.2em;
+  cursor:pointer;
 }
 
 .lg-outer .lg-thumb-outer {
@@ -852,6 +868,10 @@ button {
 
 }
 
+.Productswrapper .Workborder:last-child{
+  border-bottom:none;
+}
+
 .Workcontainer:hover {
   cursor: pointer;
 }
@@ -984,7 +1004,7 @@ img.archiveimage {
 }
 
 .Aboutdesc {
-  padding: 11vw 5vw 5vw 5vw;
+  padding: 11vw 6vw 5vw 6vw;
   justify-content: space-between;
   display: flex;
 }
@@ -993,7 +1013,7 @@ img.archiveimage {
 .contactdesc,
 .stockdesc,
 .pressdesc {
-  padding: 4vw 5vw 4vw 5vw;
+  padding: 4vw 6vw 4vw 6vw;
 }
 
 
@@ -1064,6 +1084,35 @@ img.archiveimage {
   margin-bottom:30px;
 }
 
+/* Swiper */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  height:100vh;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.swiper-button-prev{
+  display:none !important;
+}
+
+.swiper-button-next{
+      top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    color: transparent !important;
+}
+
 @media only screen and (max-width:1000px) {
 
   .Footercontainer {
@@ -1073,7 +1122,7 @@ img.archiveimage {
 
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:900px) {
   .desktop {
     display: none !important;
   }
@@ -1172,6 +1221,7 @@ img.archiveimage {
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
+    cursor:pointer !important;
   }
 
 
@@ -1250,9 +1300,7 @@ img.archiveimage {
 
   /* Footer */
 
-  .Footercontainer {
-    padding: 3vh 5vw 8vh 5vw;
-  }
+
 
   .Footer {
     align-items: flex-start;
@@ -1306,6 +1354,10 @@ img.archiveimage {
 
   /* archive page */
 
+  .sorting{
+    padding:10px;
+  }
+
   .worklist,
   .Workcontainer {
     padding-left: 0px;
@@ -1313,7 +1365,7 @@ img.archiveimage {
 
   .Workitem,
   .archiveimgContainer {
-    padding: 1vw;
+    padding: 5px;
   }
 
   .subcat,
@@ -1325,13 +1377,27 @@ img.archiveimage {
 
   .subproject,
   .Workproject {
-    width: 50%;
+    width: 260px;
+    padding-right: 10%;
+}
+
+.substatus, .Workstatus {
+  width: fit-content;
+}
+  
+
+  .Workproject{
+    margin-top:-5px;
   }
 
-  .subyear,
-  .Workyear {
-    width: 25%;
-  }
+  .active.archiveimagecontainer {
+    padding: 120px 10px 0 10px;
+}
+
+.subyear, .Workyear {
+  width: 110px;
+  padding-right:2%;
+}
 
   .lg-react-element {
     pointer-events: none;
