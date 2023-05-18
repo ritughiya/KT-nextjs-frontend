@@ -7,7 +7,7 @@ import Customhead from "../../components/Customhead";
 import Head from "next/head";
 import PortableText from "@sanity/block-content-to-react";
 import Navigationcollection from "../../components/Navigation-collection";
-import Footer from "../../components/Footerleft";
+import Footer from "../../components/Footerright";
 import Slider from "../../components/Carousel";
 
 import LightGallery from "lightgallery/react";
@@ -49,17 +49,17 @@ const Collection = ({
   size,
   backgroundImage,
   selectedWorks,
+  footerproperties
 }) => {
+  console.log(footerproperties)
+
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setActive] = useState(false);
-  const [show, setShow] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
     setActive(!isActive);
   };
-  const showRooms = () => {
-    setShow(!show);
-  };
+
 
   return (
     <div className="Collections Collectiondetail wrapper">
@@ -234,14 +234,31 @@ const Collection = ({
           </div>
         </div>
       </div>
+      <div className="Slugfooter Footercontainer"> 
 
-      {/* <Footer /> */}
+      {footerproperties.map(({ _id, title = '', notes= '', instagram = '', email='', privacyPolicy ='', credits1 = '', credits2 = ''}, index) => (
+
+
+<div key={index}>
+  <Footer instagram={instagram} email={email} />
+</div>
+
+
+
+
+      ))}
+      </div>
     </div>
   );
 };
 
+
+
 export const getServerSideProps = async (pageContext) => {
   const pageSlug = pageContext.query.slug;
+
+  const footerquery = `*[_type == "footer" ]{title, notes, instagram, email, privacyPolicy, credits1, credits2}`
+  const footerproperties = await sanityClient.fetch(footerquery)
 
   const query = `*[ _type == "collection" && slug.current == $pageSlug][0]{
         collectionTitle,
@@ -268,12 +285,7 @@ export const getServerSideProps = async (pageContext) => {
 
   const collection = await sanityClient.fetch(query, { pageSlug });
 
-  if (!collection) {
-    return {
-      props: null,
-      notFound: true,
-    };
-  } else {
+
     return {
       props: {
         collectionTitle: collection.collectionTitle,
@@ -281,9 +293,10 @@ export const getServerSideProps = async (pageContext) => {
         size: collection.size,
         backgroundImage: collection.backgroundImage,
         selectedWorks: collection.selectedWorks,
+        footerproperties
       },
     };
-  }
+  
 };
 
 export default Collection;

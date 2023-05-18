@@ -102,7 +102,6 @@ a {
 
   justify-content: space-between;
   align-items: center;
-  /* padding: 30px 60px 100px 30px; */
 }
 
 .Footerleft div a,
@@ -115,10 +114,8 @@ a {
 
   .Footerright{
     display: flex;
-  
     justify-content: space-between;
     align-items: center;
-    /* padding: 30px 30px 100px 60px; */
   }
 
 
@@ -144,6 +141,14 @@ a {
 
 .Archivefooter.Footercontainer{
   border-top: none;
+}
+
+.Archivefooter{
+  padding: 3vh 26px 12vh 6vw !important;
+}
+
+.Slugfooter{
+  padding: 3vh 6vw 12vh 26px !important;
 }
 
 .Archive .Footercontainer,
@@ -241,7 +246,7 @@ a {
 .About .title {
   width: 100vw;
   height: 6vh;
-  padding: 0 30px;
+  padding: 0 26px;
 }
 
 .Home .title {
@@ -394,7 +399,7 @@ a {
 
 
 .copy {
-  padding: 30px;
+  padding: 26px;
 }
 
 .pointer {
@@ -673,7 +678,7 @@ a {
 
 
 .flexLeft {
-  margin-right: 30px;
+  margin-right: 26px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -743,7 +748,7 @@ button {
 }
 
 .lg-outer .lg-inner {
-  margin: 30px !important;
+  margin: 26px !important;
 }
 
 .lg-toolbar .lg-close:after {
@@ -1081,7 +1086,7 @@ img.archiveimage {
 }
 
 .pubgroup{
-  margin-bottom:30px;
+  margin-bottom:26px;
 }
 
 /* Swiper */

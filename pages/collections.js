@@ -193,7 +193,7 @@ Collections
 
       ))}
 
-<div className="Collectionfooter Footercontainer"> 
+<div className="Slugfooter Footercontainer"> 
 
 {footerproperties.map(({ _id, title = '', notes= '', instagram = '', email='', privacyPolicy ='', credits1 = '', credits2 = ''}, index) => (
 

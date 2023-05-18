@@ -10,11 +10,7 @@ import Customhead from "../components/Customhead";
 import PortableText from "@sanity/block-content-to-react";
 import Footer from "../components/Footerexpanded";
 import Navigationinfo from "../components/Navigation-info";
-
-// import component 👇
 import Drawer from "react-modern-drawer";
-
-//import styles 👇
 import "react-modern-drawer/dist/index.css";
 
 const query = `*[_type == "aboutpage"] {
@@ -46,7 +42,6 @@ const serializers = {
   },
   marks: {
     link: ({ mark, children }) => {
-      // Read https://css-tricks.com/use-target_blank/
       const { blank, href } = mark;
       return blank ? (
         <a href={href} target="_blank" rel="noreferrer">
@@ -60,19 +55,12 @@ const serializers = {
 };
 
 const AboutPage = ({ properties, footerproperties }) => {
-  console.log(properties);
-
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setActive] = useState(false);
-  const [show, setShow] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
     setActive(!isActive);
   };
-  const showRooms = () => {
-    setShow(!show);
-  };
-
   return (
     <>
       {properties.map((post) => (
@@ -83,7 +71,7 @@ const AboutPage = ({ properties, footerproperties }) => {
           >
             <Customhead />
             <Head>
-              <title>Information | Kassandra Thatcher</title>
+              <title>{post.pageTitle} | Kassandra Thatcher</title>
               <meta
                 property="og:title"
                 content="Information | Kassandra Thatcher"
@@ -266,7 +254,6 @@ const AboutPage = ({ properties, footerproperties }) => {
       ))}
 
       <div className="Footercontainer">
-        {/* <div className="Footercontainer" style={{ backgroundColor: `#${post.pageColor}` }}> */}
         {footerproperties.map(
           (
             {
@@ -300,10 +287,7 @@ const AboutPage = ({ properties, footerproperties }) => {
 };
 
 export const getServerSideProps = async () => {
-  const query =
-    '*[ _type == "aboutpage"]{pageTitle, pageColor, abouttext, instagram, linkedin, email, stockists[]->, press[]->}';
   const properties = await sanityClient.fetch(query);
-
   const footerquery = `*[_type == "footer" ]{title, notes, instagram, email, privacyPolicy, credits1, credits2}`;
   const footerproperties = await sanityClient.fetch(footerquery);
 
