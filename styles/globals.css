@@ -1148,6 +1148,7 @@ img.archiveimage {
 
   .Home .title {
     justify-content: space-between;
+    padding:0;
   }
 
   .solid{
@@ -1176,7 +1177,7 @@ img.archiveimage {
     flex-direction: column;
     justify-content: space-between;
     padding: auto;
-    margin: auto 0;
+    margin: auto 10px;
   }
 
   .Home .title button.open,
@@ -1309,6 +1310,10 @@ img.archiveimage {
 
   .Footer {
     align-items: flex-start;
+  }
+
+  .Footerexpanded .links{
+    display:block;
   }
 
 

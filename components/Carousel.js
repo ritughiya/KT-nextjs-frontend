@@ -39,7 +39,7 @@ const Carousel = ({ slides }) => {
   return (
     <div className="flexRight">
       {(() => {
-        if (slideshowAmount > 2) {
+        if (slideshowAmount > 1) {
           return (
             <>
               <HorizontalScroll reverseScroll={true}>
@@ -88,7 +88,7 @@ const Carousel = ({ slides }) => {
         } else {
           return (
             <>
-              <div className="desktop">
+              <div className="">
                 <LightGallery
                   onInit={onInit}
                   speed={500}
@@ -130,7 +130,7 @@ const Carousel = ({ slides }) => {
                 </LightGallery>
               </div>
 
-              <HorizontalScroll reverseScroll={true} className={"mobile"}>
+              {/* <HorizontalScroll reverseScroll={true} className={"mobile"}>
                 <LightGallery
                   onInit={onInit}
                   speed={500}
@@ -170,7 +170,7 @@ const Carousel = ({ slides }) => {
                     )
                   )}
                 </LightGallery>
-              </HorizontalScroll>
+              </HorizontalScroll> */}
             </>
           );
         }
