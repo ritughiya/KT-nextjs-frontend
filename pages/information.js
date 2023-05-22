@@ -9,28 +9,7 @@ import Static from "next/image";
 import Customhead from "../components/Customhead";
 import PortableText from "@sanity/block-content-to-react";
 import Footer from "../components/Footerexpanded";
-import Navigationinfo from "../components/Navigation-info";
-import Drawer from "react-modern-drawer";
-import "react-modern-drawer/dist/index.css";
-
-const query = `*[_type == "aboutpage"] {
-  pageTitle,
-  pageColor,
-    abouttext,
-    igdemo,
-    instagram,
-    linkedin,
-    email,
-    press[]->{
-      publication,
-      articletitle
-    },
-    stockists[]->{
-      city,
-      storename
-    }
-}
-`;
+import Mobilemenu from "../components/Mobilemenu";
 
 const serializers = {
   types: {
@@ -54,24 +33,26 @@ const serializers = {
   },
 };
 
-const AboutPage = ({ properties, footerproperties }) => {
+const AboutPage = ({ properties, footerproperties, colorproperties }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setActive] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
     setActive(!isActive);
   };
+  const pageColor = "#" + colorproperties[0].infopageColor;
+  const menuColor = "#" + colorproperties[0].mobilemenuColor;
+
   return (
     <>
-      {properties.map((post) => (
-        <div key={post._id}>
+
           <div
             className="About wrapper"
-            style={{ backgroundColor: `#${post.pageColor}` }}
+            style={{ backgroundColor: pageColor }}
           >
             <Customhead />
             <Head>
-              <title>{post.pageTitle} | Kassandra Thatcher</title>
+              <title>About | Kassandra Thatcher</title>
               <meta
                 property="og:title"
                 content="Information | Kassandra Thatcher"
@@ -80,62 +61,24 @@ const AboutPage = ({ properties, footerproperties }) => {
             </Head>
 
             <div>
-              <div className="linkframe mobile">
-                <div
-                  className={`title ${isActive ? "porcelain" : null}`}
-                  style={{ backgroundColor: `#${post.pageColor}` }}
-                >
-                  <div className="siteLogo pointer">
-                    <Link href="https://k-thatcher.netlify.app" passHref>
-                      KASSANDRA THATCHER STUDIO
-                    </Link>
-                  </div>
-
-                  <div className="h2">
-                    <button
-                      className={` ${isActive ? "open" : null}`}
-                      onClick={toggleDrawer}
-                    >
-                      <div className="bar-one" />
-                      <div className="bar-two" />
-                      <div className="bar-three" />
-                    </button>
-                    <Drawer
-                      open={isOpen}
-                      onClose={toggleDrawer}
-                      direction="top"
-                      className="topnav porcelain"
-                      overlayOpacity="0"
-                      height="94vh"
-                    >
-                      <div>
-                        <ul>
-                          <Link href="/collections" passHref>
-                            <li>Collections</li>
-                          </Link>
-                          <Link href="/archive" passHref>
-                            <li>Archive</li>
-                          </Link>
-                          <Link href="/information" passHref>
-                            <li>Information</li>
-                          </Link>
-                        </ul>
-                      </div>
-                    </Drawer>
-                  </div>
-                </div>
-              </div>
+            <Mobilemenu
+            isActive={isActive}
+            pageColor={pageColor}
+            toggleDrawer={toggleDrawer}
+            isOpen={isOpen}
+            menuColor={menuColor}
+          />
             </div>
 
             <div className="linkframe desktop">
               <div
                 className="title"
-                style={{ backgroundColor: `#${post.pageColor}` }}
+                style={{ backgroundColor: pageColor }}
               >
                 <div className="pageTitle">Information</div>
                 <Link href="/" passHref>
                   <div className="siteLogo pointer">
-                    <Link href="https://k-thatcher.netlify.app" passHref>
+                    <Link href="/" passHref>
                       KASSANDRA THATCHER STUDIO
                     </Link>
                   </div>
@@ -144,7 +87,7 @@ const AboutPage = ({ properties, footerproperties }) => {
               <Link href="/collections" passHref>
                 <div
                   className="subtitle Leftsubtitle pointer"
-                  style={{ backgroundColor: `#${post.pageColor}` }}
+                  style={{ backgroundColor: pageColor }}
                 >
                   Collections
                 </div>
@@ -152,13 +95,14 @@ const AboutPage = ({ properties, footerproperties }) => {
               <Link href="/archive" passHref>
                 <div
                   className="subtitle Rightsubtitle pointer"
-                  style={{ backgroundColor: `#${post.pageColor}` }}
+                  style={{ backgroundColor: pageColor }}
                 >
                   Archive
                 </div>
               </Link>
             </div>
-
+            {properties.map((post) => (
+        <div key={post._id}>
             <div className="Aboutdesc ">
               <div className="Abouthed">About</div>
               <div className="Abouttxt">
@@ -250,10 +194,12 @@ const AboutPage = ({ properties, footerproperties }) => {
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      <div className="Footercontainer">
+        </div>
+
+
+      <div className="Footercontainer" style={{ backgroundColor: pageColor }}>
         {footerproperties.map(
           (
             {
@@ -287,9 +233,31 @@ const AboutPage = ({ properties, footerproperties }) => {
 };
 
 export const getServerSideProps = async () => {
+
+const query = `*[_type == "aboutpage"] {
+  pageTitle,
+  pageColor,
+    abouttext,
+    igdemo,
+    instagram,
+    linkedin,
+    email,
+    press[]->{
+      publication,
+      articletitle
+    },
+    stockists[]->{
+      city,
+      storename
+    }
+}
+`;
   const properties = await sanityClient.fetch(query);
   const footerquery = `*[_type == "footer" ]{title, notes, instagram, email, privacyPolicy, credits1, credits2}`;
   const footerproperties = await sanityClient.fetch(footerquery);
+  const colorquery = `*[_type == "pagecolors" ]`;
+  const colorproperties = await sanityClient.fetch(colorquery);
+
 
   if (!properties.length) {
     return {
@@ -302,6 +270,7 @@ export const getServerSideProps = async () => {
       props: {
         properties,
         footerproperties,
+        colorproperties,
       },
     };
   }

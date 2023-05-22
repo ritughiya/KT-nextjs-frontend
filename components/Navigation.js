@@ -38,7 +38,7 @@ export default function Navigation() {
     <div>
       <div className="linkframe desktop">
         <div className="title">
-          <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app" passHref>KASSANDRA THATCHER STUDIO</Link></div>
+          <div className="siteLogo pointer"><Link href="/" passHref>KASSANDRA THATCHER STUDIO</Link></div>
 
         </div>
         <div className="horflex">
