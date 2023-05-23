@@ -1301,6 +1301,12 @@ img.archiveimage {
     height: 45vh !important;
   }
 
+  /* Collections page */
+
+  .blockbg:hover{
+    opacity: 0 !important;
+  }
+
   /* Footer */
 
 
