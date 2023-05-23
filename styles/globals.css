@@ -1384,6 +1384,14 @@ img.archiveimage {
     padding: 5px;
   }
 
+  .Workcat,
+  .Workdims,
+  .Workproject,
+  .Workstatus,
+  .Workyear{
+    font-size:28px;
+  }
+
   .subcat,
   .Workcat,
   .subdims,
