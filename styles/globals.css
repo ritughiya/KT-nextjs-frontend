@@ -1313,7 +1313,10 @@ img.archiveimage {
     display:block;
   }
 
-
+  .Footerright,
+  .Footerleft{
+    display:block;
+  }
 
   .col2 {
     width: 70vw;
@@ -1430,8 +1433,10 @@ img.archiveimage {
   }
 
   .Archivefooter{
-    padding: 3vh 10px 12vh 10px !important;
+    padding: 3vh 10px 8vh 10px !important;
   }
+
+
 
   /* slug page */
 
