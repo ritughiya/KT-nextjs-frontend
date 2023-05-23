@@ -5,6 +5,7 @@ import NavigationHome from "../components/NavigationHome";
 import Mobilemenu from "../components/Mobilemenu";
 import { sanityClient, urlFor } from "../sanity";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Div100vh from 'react-div-100vh'
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
@@ -32,6 +33,7 @@ const IndexPage = ({ properties, colorproperties }) => {
   const menuColor = "#" + colorproperties[0].mobilemenuColor;
 
   return (
+    <Div100vh>
     <div className="Home wrapper">
       <Customhead />
       <NavigationHome />
@@ -70,6 +72,7 @@ const IndexPage = ({ properties, colorproperties }) => {
         </div>
       ))}
     </div>
+    </Div100vh>
   );
 };
 
