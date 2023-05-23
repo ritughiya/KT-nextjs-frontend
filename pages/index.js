@@ -1,6 +1,8 @@
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Customhead from "../components/Customhead";
-import Navigationreal from "../components/Navigation";
+import NavigationHome from "../components/NavigationHome";
+import Mobilemenu from "../components/Mobilemenu";
 import { sanityClient, urlFor } from "../sanity";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -20,19 +22,25 @@ const rgbDataURL = (r, g, b) =>
     triplet(0, r, g) + triplet(b, 255, 255)
   }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
 
-const query = `*[ _type == "homeslideshow"]{
-    slideshow[]->{
-      mainImage,
-      alt,
-  }
-  }
-  `;
+const IndexPage = ({ properties, colorproperties }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setActive] = useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+    setActive(!isActive);
+  };
+  const menuColor = "#" + colorproperties[0].mobilemenuColor;
 
-const IndexPage = ({ properties }) => {
   return (
-    <div className=" Home wrapper">
+    <div className="Home wrapper">
       <Customhead />
-      <Navigationreal />
+      <NavigationHome />
+      <Mobilemenu
+            isActive={isActive}
+            toggleDrawer={toggleDrawer}
+            isOpen={isOpen}
+            menuColor={menuColor}
+          />
       {properties.map((post) => (
         <div key={post._id}>
           <Swiper
@@ -66,8 +74,16 @@ const IndexPage = ({ properties }) => {
 };
 
 export const getServerSideProps = async () => {
-
+  const query = `*[ _type == "homeslideshow"]{
+    slideshow[]->{
+      mainImage,
+      alt,
+  }
+  }
+  `;
   const properties = await sanityClient.fetch(query);
+  const colorquery = `*[_type == "pagecolors" ]`;
+  const colorproperties = await sanityClient.fetch(colorquery);
 
   if (!properties.length) {
     return {
@@ -79,6 +95,7 @@ export const getServerSideProps = async () => {
     return {
       props: {
         properties,
+        colorproperties
       },
     };
   }

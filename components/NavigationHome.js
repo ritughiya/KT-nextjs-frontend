@@ -23,17 +23,10 @@ export default function Navigation() {
 
   const [isOpen, setIsOpen] = useState(false)
   const [isActive, setActive] = useState(false)
-  const [show, setShow] = useState(false)
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState)
     setActive(!isActive);
   }
-  const showRooms = () => {
-    setShow(!show);
-  }
-
-
-
   return (
     <div>
       <div className="linkframe desktop">
@@ -58,45 +51,6 @@ export default function Navigation() {
             Information
           </div>
         </Link>
-
-      </div>
-      <div className={`linkframe mobile ${isActive ? 'solid' : null}`}>
-
-        <div className={`title ${isActive ? 'green' : null}`}>
-          <div className="siteLogo pointer"><Link href="https://k-thatcher.netlify.app" passHref>KASSANDRA THATCHER STUDIO</Link></div>
-
-          <div className="h2">
-            <button className={` ${isActive ? 'open' : null}`} onClick={toggleDrawer}>
-              <div className="bar-one" />
-              <div className="bar-two" />
-              <div className="bar-three" />
-            </button>
-            <Drawer
-              open={isOpen}
-              onClose={toggleDrawer}
-              direction='top'
-              className='topnav porcelain'
-              overlayOpacity='0'
-              height='94vh'
-            >
-              <div>
-                <Div100vh>
-                <ul>
-
-                  <Link href="/collections" passHref><li>Collections</li></Link>
-                  <Link href="/archive" passHref><li>Archive</li></Link>
-                  <Link href="/information" passHref><li>Information</li></Link>
-
-                </ul>
-                </Div100vh>
-
-              </div>
-            </Drawer>
-
-          </div>
-
-        </div>
-
 
       </div>
     </div>
