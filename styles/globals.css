@@ -1139,10 +1139,13 @@ img.archiveimage {
     font-size: 16px;
   }
 
-  .Home .title {
+  .Home .title,
+  .Collections .title,
+  .About .title,
+  .Archive .title   {
     justify-content: space-between;
     padding:22px 0;
-    height:50px;
+    height:55px;
   }
 
   .solid{
@@ -1183,7 +1186,7 @@ img.archiveimage {
 
 
   .h2 {
-    height: 50px;
+    height: 55px;
     display: flex;
     padding: auto;
     border-left: 1px solid #f9f7f4;
@@ -1249,7 +1252,7 @@ img.archiveimage {
   .EZDrawer .EZDrawer__container {
     width: 100%;
     height: calc(94vh - calc(94vh - 100%)) !important;
-        margin-top: 50px;
+        margin-top: 55px;
     box-shadow: none !important;
     /* background-color: #F9F7F4 !important; */
   }
