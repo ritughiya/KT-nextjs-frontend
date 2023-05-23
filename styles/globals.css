@@ -1458,3 +1458,9 @@ img.archiveimage {
 
 
 }
+
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+  .EZDrawer ul {
+    height: 60vh !important;
+  }
+  }
