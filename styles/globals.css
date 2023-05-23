@@ -1301,12 +1301,6 @@ img.archiveimage {
     height: 45vh !important;
   }
 
-  /* Collections page */
-
-  .blockbg:hover{
-    opacity: 0 !important;
-  }
-
   /* Footer */
 
 
@@ -1365,15 +1359,24 @@ img.archiveimage {
     display: block;
   }
 
-  /* archive page */
+  /* Collections page */
+
+  .blockbg:hover{
+    opacity: 0 !important;
+  }
+
+  /* Archive page */
+
+  .Archive .worklist{
+    padding: 55px 0 0 0;
+  }
+
+  .Workcontainer{
+    padding:15px 0;
+  }
 
   .sorting{
     padding:10px;
-  }
-
-  .worklist,
-  .Workcontainer {
-    padding-left: 0px;
   }
 
   .Workitem,
@@ -1388,14 +1391,22 @@ img.archiveimage {
     display: none;
   }
 
+  .subyear, .Workyear {
+    width: 75px;
+    margin-right:10px;
+    padding-right:0;
+  }
+
   .subproject,
   .Workproject {
-    width: 260px;
-    padding-right: 10%;
+    width: 180px;
+    padding-right: 0;
+    margin-right:10px;
 }
 
 .substatus, .Workstatus {
-  width: fit-content;
+  width:120px;
+  padding-right:0;
 }
   
 
@@ -1405,11 +1416,6 @@ img.archiveimage {
 
   .active.archiveimagecontainer {
     padding: 120px 10px 0 10px;
-}
-
-.subyear, .Workyear {
-  width: 110px;
-  padding-right:2%;
 }
 
   .lg-react-element {
