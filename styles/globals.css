@@ -568,10 +568,6 @@ a {
   padding-top: 1vh !important;
 }
 
-.workdetail {
-  /* scroll-snap-align: start; */
-}
-
 /* Collection Page */
 
 .Productswrapper,
@@ -1441,6 +1437,7 @@ img.archiveimage {
 
   .workdetail {
     width: 80vw !important;
+    margin-right:10px;
   }
 
   .Worktitle {
