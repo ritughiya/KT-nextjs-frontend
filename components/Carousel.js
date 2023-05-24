@@ -44,7 +44,7 @@ const Carousel = ({ slides, background }) => {
                             position: "relative",
                             width: "405px",
                             height: "582px",
-                            marginRight: "30px",
+                            marginRight: "22px",
                           }}
                         >
                           {mainImage && (

@@ -103,8 +103,8 @@ const AboutPage = ({ properties, footerproperties, colorproperties }) => {
             </div>
             {properties.map((post) => (
         <div key={post._id}>
-            <div className="Aboutdesc ">
-              <div className="Abouthed">About</div>
+            <div className="Aboutpadding ">
+              <div className="pageHeader center">About</div>
               <div className="Abouttxt">
                 {post.abouttext && (
                   <PortableText
@@ -115,7 +115,7 @@ const AboutPage = ({ properties, footerproperties, colorproperties }) => {
               </div>
             </div>
 
-            <div className="Aboutdesc contactdesc">
+            <div className="Aboutpadding contactdesc">
               <div className="Abouthed">Contact</div>
               <div className="Abouttxt">
                 {post.instagram && (
@@ -156,7 +156,7 @@ const AboutPage = ({ properties, footerproperties, colorproperties }) => {
               </div>
             </div>
 
-            <div className="Aboutdesc stockdesc ">
+            <div className="Aboutpadding stockdesc ">
               <div className="Abouthed">Stockists</div>
               <div className="Abouttxt stockistflex">
                 {post.stockists &&
@@ -174,7 +174,7 @@ const AboutPage = ({ properties, footerproperties, colorproperties }) => {
               </div>
             </div>
 
-            <div className="Aboutdesc pressdesc ">
+            <div className="Aboutpadding pressdesc ">
               <div className="Abouthed">Press</div>
               <div className="Abouttxt pressflex">
                 {post.press &&

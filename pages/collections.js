@@ -90,8 +90,8 @@ const CollectionsPage = ({ properties, footerproperties, colorproperties }) => {
         </div>
         {properties.map((post) => (
           <div key={post._id}>
-            <div className="copy">
-              <div className="groupTitle">The Collections</div>
+            <div className="pagePadding">
+              <div className="pageHeader center">The Collections</div>
 
               <Masonry
                 breakpointCols={breakpointColumnsObj}

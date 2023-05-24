@@ -53,7 +53,7 @@ const Collection = ({
     >
       <Customhead />
       <Head>
-        <title>{collectionDesc} | Kassandra Thatcher</title>
+        <title>{collectionTitle} | Kassandra Thatcher</title>
         <meta
           property="og:title"
           content="{collectionDesc} | Kassandra Thatcher"
@@ -119,16 +119,16 @@ const Collection = ({
                     specsheet = "",
                     slideshow = "",
                   }) => (
-                    <div key={_id} className="copy Workborder">
+                    <div key={_id} className="pagePadding Workborder">
                       {category && (
                         <div className="category mobile">{category}</div>
                       )}
-                      <div className="Worktitle mobile">{title && title}</div>
+                      <div className="pageHeader left mobile">{title && title}</div>
                       <div className="productContainer">
                         <div className="flexLeft">
                           <div className="block">
                             <div className="Titleflex">
-                              <div className="Worktitle desktop">
+                              <div className="pageHeader left desktop">
                                 {title && title}
                               </div>
                               {category && (

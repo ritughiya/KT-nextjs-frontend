@@ -39,6 +39,14 @@ a {
   text-decoration: none;
 }
 
+.pagePadding{
+  padding: 55px 22px;
+}
+
+.Productswrapper .pagePadding{
+  padding: 25px 22px;
+}
+
 .Footerexpanded {
   padding: 0;
 }
@@ -374,10 +382,6 @@ a {
   transition: 0.3s;
 }
 
-.copy {
-  padding: 26px;
-}
-
 .pointer {
   cursor: pointer;
 }
@@ -417,9 +421,7 @@ a {
   text-align: center;
 }
 
-.Collections .groupTitle {
-  font-family: RecklessNeue;
-}
+
 
 .Collectionblock {
   /* width: 46.5vw; */
@@ -573,11 +575,6 @@ a {
   padding-top: 6vh;
 }
 
-.Collectionswrapper {
-  /* width: 94vw;
-  margin: 0 4vw 0 2vw; */
-}
-
 .category {
   background: #97948f;
   line-height: 1;
@@ -595,23 +592,41 @@ a {
   justify-content: space-between;
 }
 
-.Worktitle,
-.groupTitle {
+.Abouthed {
   font-family: RecklessNeue;
-  font-size: 50px;
+  font-size: 39px;
+  letter-spacing: -0.01em;
 }
 
-.Worktitle {
+.pageHeader {
+  font-family: RecklessNeue;
+  font-size: 45px;
+  letter-spacing: -.01em;
+  margin: 35px 0;
+}
+
+.center{
+  text-align:center;
+}
+
+.left{
+  text-align:left;
+}
+
+.Aboutpadding .pageHeader,
+.productContainer .pageHeader{
+  margin: 0;
+}
+
+.productContainer .pageHeader{
+  flex: 1;
 }
 
 .category {
   width: max-content;
 }
 
-.groupTitle {
-  text-align: center;
-  padding: 12vh 0 8vh 0;
-}
+
 
 .description {
   margin-top: 6vh;
@@ -627,7 +642,7 @@ a {
   font-family: SctoGroteskreg;
   font-size: 0.8em;
   border-top: 1px solid #2c2913;
-  padding: 7px 0;
+  padding: 10px 0;
   display: flex;
   align-items: center;
 }
@@ -639,6 +654,7 @@ a {
 
 .productContainer .subhed {
   width: 13vw;
+  padding-right:22px;
 }
 
 .flexLeft {
@@ -662,7 +678,7 @@ a {
   font-family: RecklessNeue;
   font-size: 19px;
   width: 17vw;
-  padding: 2vw;
+  padding: 30px 0;
   text-align: center;
   transition: all 0.5s;
 }
@@ -946,13 +962,9 @@ img.archiveimage {
   text-align: center;
 }
 
-.Abouthed {
-  font-family: RecklessNeue;
-  font-size: 39px;
-  letter-spacing: -0.01em;
-}
 
-.Aboutdesc {
+
+.Aboutpadding {
   padding: 11vw 6vw 5vw 6vw;
   justify-content: space-between;
   display: flex;
@@ -978,7 +990,7 @@ img.archiveimage {
   text-indent: 1.5em;
 }
 
-.Aboutdesc p a {
+.Aboutpadding p a {
   border-bottom: 1px solid #2c2913;
 }
 
@@ -1277,7 +1289,7 @@ img.archiveimage {
 
   /* About page */
 
-  .Aboutdesc {
+  .Aboutpadding {
     display: block;
     padding:55px 22px;
   }
@@ -1287,12 +1299,15 @@ img.archiveimage {
     text-align: center;
   }
 
+  .Aboutpadding .pageHeader{
+    margin: 35px 0;
+  }
+
   .Abouttxt {
     width: 100%;
     font-size: 21px;
     line-height: 24px;
     letter-spacing: 0.001em;
-
   }
 
   .stockistgroup {
@@ -1317,15 +1332,27 @@ img.archiveimage {
   }
 
   .Workcontainer {
-    padding: 20px 12px;
+    padding: 20px 22px;
   }
 
   .sorting {
-    padding: 10px;
+    padding: 10px 22px;
   }
 
   .archiveimgContainer {
     padding: 5px;
+  }
+
+  .productContainer .subhed {
+    width:25vw;
+  }
+
+  .inquireBlock, .specBlock{
+    width: 40vw;
+  }
+
+  .blockContainer{
+    margin-top:22px;
   }
 
   .Workcat,
@@ -1377,10 +1404,23 @@ img.archiveimage {
 
   .Archivefooter,
   .Slugfooter {
-    padding: 3vh 10px 8vh 10px !important;
+    padding: 3vh 22px 8vh 22px !important;
   }
 
   /* slug page */
+
+  .Productswrapper,
+.Collectionswrapper {
+  padding-top: 55px;
+}
+
+  .Collectiondetail .pageHeader{
+    margin:15px 0;
+  }
+
+  .description{
+    margin-top:22px;
+  }
 
   .productContainer {
     flex-direction: column-reverse;
@@ -1388,8 +1428,12 @@ img.archiveimage {
 
   .flexLeft,
   .flexRight {
-    width: 94vw;
-  }
+    width: auto;
+    }
+
+    .flexLeft{
+      margin-right: 0px;
+    }
 
   .workdetail {
     width: 80vw !important;
