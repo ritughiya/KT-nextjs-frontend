@@ -31,6 +31,7 @@ body {
   color: #2c2913;
   font-smooth: auto !important;
   -webkit-font-smoothing: antialiased !important;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -1278,15 +1279,20 @@ img.archiveimage {
 
   .Aboutdesc {
     display: block;
+    padding:55px 22px;
   }
 
   .Abouthed {
-    margin: 5%;
+    margin: 22px 0;
     text-align: center;
   }
 
   .Abouttxt {
     width: 100%;
+    font-size: 21px;
+    line-height: 24px;
+    letter-spacing: 0.001em;
+
   }
 
   .stockistgroup {
