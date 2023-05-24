@@ -1410,7 +1410,7 @@ img.archiveimage {
 
   .workdetail {
     width: 80vw !important;
-    margin-right:10px;
+    margin-right:10px !important;
   }
 
   .Worktitle {
