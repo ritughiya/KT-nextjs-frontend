@@ -120,15 +120,23 @@ const CollectionsPage = ({ properties, footerproperties, colorproperties }) => {
                                 passHref
                               >
                                 {backgroundImage && (
+                                  // <Image
+                                  //   key={_id}
+                                  //   className="bgimage"
+                                  //   src={urlFor(backgroundImage).url()}
+                                  //   height="60vh"
+                                  //   layout="fill"
+                                  //   objectFit="cover"
+                                  // ></Image>
                                   <Image
-                                    key={_id}
-                                    className="bgimage"
-                                    src={urlFor(backgroundImage).url()}
-                                    height="60vh"
-                                    layout="fill"
-                                    objectFit="cover"
-                                  ></Image>
+                                  key={_id}
+                                  className="bgimage"
+                                  src={urlFor(backgroundImage).url()}
+                                  layout="fill"
+                                  objectFit="cover"
+                                ></Image>
                                 )}
+
                               </Link>
                             </div>
                             <div className="blocktext">
@@ -165,7 +173,6 @@ const CollectionsPage = ({ properties, footerproperties, colorproperties }) => {
                                     key={_id}
                                     className="bgimage"
                                     src={urlFor(backgroundImage).url()}
-                                    height="90vh"
                                     layout="fill"
                                     objectFit="cover"
                                   ></Image>

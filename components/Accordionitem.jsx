@@ -5,6 +5,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { sanityClient, urlFor } from "../sanity";
 import { If, Elif, Else } from "rc-if-else";
+import Image from "next/image";
 
 const Accordionitem = (props) => {
   const [show, setShow] = useState(false);
@@ -35,12 +36,14 @@ const Accordionitem = (props) => {
           >
             {props.archiveimages &&
               props.archiveimages.map(({ _id, mainImage = "", alt = "" }) => (
-                <img
+                <Image
                   key={_id}
                   className="archiveimage placeholder"
                   src={urlFor(mainImage).url()}
                   alt={alt}
-                ></img>
+                  width={300}
+                  height={300}
+                ></Image>
               ))}
           </div>
         </div>
@@ -64,12 +67,14 @@ const Accordionitem = (props) => {
           <div className={` archiveimagecontainer  ${show ? "active" : null}`}>
             {props.archiveimages &&
               props.archiveimages.map(({ _id, mainImage = "", alt = "" }) => (
-                <img
+                <Image
                   key={_id}
                   className="archiveimage placeholder"
                   src={urlFor(mainImage).url()}
                   alt={alt}
-                ></img>
+                  width={300}
+                  height={300}
+                ></Image>
               ))}
           </div>
         </div>

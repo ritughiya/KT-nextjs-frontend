@@ -22,7 +22,7 @@ const Mobilemenu = ({ isActive, pageColor, toggleDrawer, isOpen, menuColor }) =>
     <div className="linkframe mobile">
       <div className={`title ${isActive ? "porcelain green" : null}`}  style={{backgroundColor: pageColor}}>
         <div className="siteLogo pointer">
-          <Link href="https://k-thatcher.netlify.app" passHref>
+          <Link href="/" passHref>
             KASSANDRA THATCHER STUDIO
           </Link>
         </div>
