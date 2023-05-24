@@ -13,6 +13,20 @@
   src: url(SctoGroteskA-Medium.woff);
 }
 
+
+* {
+  box-sizing: border-box !important;
+}
+
+.mobile {
+  display: none;
+}
+
+.porcelain {
+  background-color: #f9f7f4 !important;
+}
+
+
 ::selection {
   background: #e8e8e8; /* WebKit/Blink Browsers */
   color: #686234;
@@ -50,6 +64,8 @@ a {
 .Productswrapper .pagePadding{
   padding: 25px 22px;
 }
+
+/* Footer */
 
 .Footerexpanded {
   padding: 0;
@@ -108,7 +124,6 @@ a {
 
 .Footerleft {
   display: flex;
-
   justify-content: space-between;
   align-items: center;
 }
@@ -125,18 +140,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-* {
-  box-sizing: border-box !important;
-}
-
-.mobile {
-  display: none;
-}
-
-.porcelain {
-  background-color: #f9f7f4 !important;
 }
 
 /* Footer styling */
@@ -392,27 +395,11 @@ a {
 
 /* Collections Page */
 
-.Collections {
-  padding-bottom: 6vh;
-}
-
-.Collectiondetail .Leftsubtitle,
-.Collectiondetail .Rightsubtitle,
-.Collectiondetail .Bottomsubtitle {
-  /* background-color: #F9F7F4; */
-}
-
 .Collectionsflex {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 3vw 10vh 0;
-}
-
-.Collections .title {
-}
-
-.Collections .subtitle {
 }
 
 .Collections .pageTitle {
@@ -424,8 +411,6 @@ a {
   width: 60vw;
   text-align: center;
 }
-
-
 
 .Collectionblock {
   /* width: 46.5vw; */
@@ -453,7 +438,6 @@ a {
   pointer-events: none;
   padding: 50px;
   line-height: 1.25;
-  /* font-weight: 500; */
   font-family: RecklessNeue;
 }
 
@@ -472,11 +456,6 @@ a {
 
 .blockbg:hover + .blocktext {
   color: #97948f;
-}
-
-.grid {
-  /* background: #EEE;
-  max-width: 1200px; */
 }
 
 /* clearfix */
@@ -551,7 +530,6 @@ a {
 .lg-react-element {
   display: flex;
   overflow-y: scroll;
-  /* scroll-snap-type: y mandatory; */
 }
 
 .lg-sub-html {
@@ -625,8 +603,6 @@ a {
 .category {
   width: max-content;
 }
-
-
 
 .description {
   margin-top: 6vh;
@@ -809,10 +785,6 @@ button {
   display: none;
 }
 
-.Archive .Bottomsubtitle,
-.Archive .Leftsubtitle {
-}
-
 .worklist {
   width: 100%;
   padding-left: 6vh;
@@ -936,10 +908,6 @@ img.archiveimage {
 
 /* About Page */
 
-.About .Bottomsubtitle {
-  /* background-color: rgba(240, 235, 230, 1); */
-}
-
 .About .Rightsubtitle {
   width: 94vh;
   padding: 0 6vh 0 0;
@@ -961,8 +929,6 @@ img.archiveimage {
   width: 60vw;
   text-align: center;
 }
-
-
 
 .Aboutpadding {
   padding: 11vw 6vw 5vw 6vw;
@@ -1103,10 +1069,6 @@ img.archiveimage {
     height: 55px;
   }
 
-  .solid {
-    /* background-color: #f9f7f4; */
-  }
-
   .Home .green {
     border-bottom: 1px solid #2c2913;
   }
@@ -1205,7 +1167,6 @@ img.archiveimage {
     height: calc(94vh - calc(94vh - 100%)) !important;
     margin-top: 55px;
     box-shadow: none !important;
-    /* background-color: #F9F7F4 !important; */
   }
 
   .EZDrawer ul {
@@ -1249,7 +1210,7 @@ img.archiveimage {
 
   .longBlock,
   .shortBlock {
-    height: 450px !important;
+    height: 310px !important;
   }
 
   /* Footer */
@@ -1260,6 +1221,10 @@ img.archiveimage {
 
   .Footerexpanded .links {
     display: block;
+  }
+
+  .Footerexpanded .footerlogo{
+    font-size:25px;
   }
 
   .Footerright,
@@ -1415,7 +1380,11 @@ img.archiveimage {
 }
 
   .Collectiondetail .pageHeader{
-    margin:15px 0;
+    margin:0 0 15px 0;
+  }
+
+  .Collectiondetail .category{
+    margin:0 0 15px 0; 
   }
 
   .description{
@@ -1433,6 +1402,10 @@ img.archiveimage {
 
     .flexLeft{
       margin-right: 0px;
+    }
+
+    .flexRight{
+      width:95vw;
     }
 
   .workdetail {
