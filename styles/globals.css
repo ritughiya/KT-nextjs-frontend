@@ -832,7 +832,6 @@ button {
 
 .Workitem {
   display: flex;
-  align-items:flex-start;
 }
 
 .subyear,
@@ -1323,6 +1322,10 @@ img.archiveimage {
 
   .blockContainer{
     margin-top:22px;
+  }
+
+  .Workitem {
+    align-items:flex-start;
   }
 
   .Workcat,
