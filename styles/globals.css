@@ -832,6 +832,7 @@ button {
 
 .Workitem {
   display: flex;
+  align-items:flex-start;
 }
 
 .subyear,
@@ -1308,6 +1309,10 @@ img.archiveimage {
     padding: 5px;
   }
 
+  .active.archiveimagecontainer{
+    padding-top:50px;
+  }
+
   .productContainer .subhed {
     width:25vw;
   }
@@ -1358,6 +1363,7 @@ img.archiveimage {
 
   .Workproject {
     margin-top: -2px;
+    font-size:26px;
   }
 
 
