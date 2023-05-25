@@ -45,6 +45,7 @@ const IndexPage = ({ properties, colorproperties }) => {
           />
       {properties.map((post) => (
         <div key={post._id}>
+              <Div100vh>
           <Swiper
             spaceBetween={30}
             effect={"fade"}
@@ -69,6 +70,7 @@ const IndexPage = ({ properties, colorproperties }) => {
               </div>
             ))}
           </Swiper>
+          </Div100vh>
         </div>
       ))}
     </div>
