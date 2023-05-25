@@ -1371,6 +1371,11 @@ img.archiveimage {
 
 
   .lg-react-element {
+    /* pointer-events: none; */
+    cursor: default;
+  }
+
+  .lg-react-element a{
     pointer-events: none;
   }
 

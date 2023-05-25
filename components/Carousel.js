@@ -26,7 +26,7 @@ const Carousel = ({ slides, background }) => {
         if (slideshowAmount > 1) {
           return (
             <>
-              <HorizontalScroll reverseScroll={true}>
+              {/* <HorizontalScroll reverseScroll={true}> */}
                 <LightGallery
                   onInit={onInit}
                   speed={500}
@@ -61,7 +61,7 @@ const Carousel = ({ slides, background }) => {
                     )
                   )}
                 </LightGallery>
-              </HorizontalScroll>
+              {/* </HorizontalScroll> */}
             </>
           );
         } else {
