@@ -1403,12 +1403,13 @@ img.archiveimage {
       margin-right: 0px;
     }
 
-    /* .flexRight{
-      width:95vw;
-    } */
+    .flexRight{
+      height:402px;
+    }
 
   .workdetail {
-    width: 80vw !important;
+    width: 280px !important;
+    height:402px !important;
     margin-right:10px !important;
   }
 
