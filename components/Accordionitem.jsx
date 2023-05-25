@@ -56,13 +56,13 @@ const Accordionitem = (props) => {
           onClick={handleOpen}
         >
           <div className={`Workitem ${show ? "porcelain" : null}`}>
-            {props.year && <div className="Workyear">{props.year}</div>}
-            {props.title && <div className="Workproject">{props.title}</div>}
-            {props.category && <div className="Workcat">{props.category}</div>}
-            {props.dimensions && (
-              <div className="Workdims">{props.dimensions}</div>
-            )}
-            {props.status && <div className="Workstatus">{props.status}</div>}
+            <div className="Workyear">{props.year && <div>{props.year}</div>}</div>
+            <div className="Workproject">{props.title && <div>{props.title}</div>}</div>
+            <div className="Workcat">{props.category && <div>{props.category}</div>}</div>
+            <div className="Workdims">{props.dimensions && (
+              <div>{props.dimensions}</div>
+            )}</div>
+            <div className="Workstatus">{props.status && <div>{props.status}</div>}</div>
           </div>
           <div className={` archiveimagecontainer  ${show ? "active" : null}`}>
             {props.archiveimages &&
