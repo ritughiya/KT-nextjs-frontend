@@ -67,14 +67,7 @@ const Accordionitem = (props) => {
           <div className={` archiveimagecontainer  ${show ? "active" : null}`}>
             {props.archiveimages &&
               props.archiveimages.map(({ _id, mainImage = "", alt = "" }) => (
-                <Image
-                  key={_id}
-                  className="archiveimage placeholder"
-                  src={urlFor(mainImage).url()}
-                  alt={alt}
-                  width={300}
-                  height={300}
-                ></Image>
+                <img alt={alt} key={_id} className="archiveimage placeholder" src={urlFor(mainImage).url()} />
               ))}
           </div>
         </div>

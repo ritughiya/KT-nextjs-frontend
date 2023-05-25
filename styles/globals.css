@@ -897,7 +897,7 @@ button {
 
 .archiveimagecontainer.active img {
   height: 30vh !important;
-  width: 30vh !important;
+  width: auto !important;
   opacity: 1;
 }
 
@@ -1337,14 +1337,14 @@ img.archiveimage {
 
   .subyear,
   .Workyear {
-    width: 80px;
+    width: 15vw;
     margin-right: 5px;
     padding-right: 0;
   }
 
   .subproject,
   .Workproject {
-    width: 160px;
+    width: 45vw;
     padding-right: 0;
     margin-right: 5px;
   }
@@ -1356,12 +1356,9 @@ img.archiveimage {
   }
 
   .Workproject {
-    margin-top: -5px;
+    margin-top: -2px;
   }
 
-  .active.archiveimagecontainer {
-    padding: 120px 10px 0 0;
-  }
 
   .lg-react-element {
     pointer-events: none;
