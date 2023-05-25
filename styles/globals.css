@@ -897,6 +897,7 @@ button {
 
 .archiveimagecontainer.active img {
   height: 30vh !important;
+  width: 30vh !important;
   opacity: 1;
 }
 
@@ -1359,7 +1360,7 @@ img.archiveimage {
   }
 
   .active.archiveimagecontainer {
-    padding: 120px 10px 0 10px;
+    padding: 120px 10px 0 0;
   }
 
   .lg-react-element {
