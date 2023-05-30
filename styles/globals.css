@@ -854,6 +854,11 @@ button {
   width: 22%;
 }
 
+.Workdims p{
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 .substatus,
 .Workstatus {
   width: 15%;

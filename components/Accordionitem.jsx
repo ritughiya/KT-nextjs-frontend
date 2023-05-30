@@ -6,7 +6,28 @@ import React, { useEffect, useState, useCallback } from "react";
 import { sanityClient, urlFor } from "../sanity";
 import { If, Elif, Else } from "rc-if-else";
 import Image from "next/image";
-
+import PortableText from "@sanity/block-content-to-react";
+const serializers = {
+  types: {
+    code: (props) => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+  marks: {
+    link: ({ mark, children }) => {
+      const { blank, href } = mark;
+      return blank ? (
+        <a href={href} target="_blank" rel="noreferrer">
+          {children}
+        </a>
+      ) : (
+        <a href={href}>{children}</a>
+      );
+    },
+  },
+};
 const Accordionitem = (props) => {
   const [show, setShow] = useState(false);
   const handleOpen = (index) => {
@@ -25,7 +46,7 @@ const Accordionitem = (props) => {
             {props.title && <div className="Workproject">{props.title}</div>}
             {props.category && <div className="Workcat">{props.category}</div>}
             {props.dimensions && (
-              <div className="Workdims">{props.dimensions}</div>
+              <div className="Workdims"><PortableText blocks={props.dimensions} />              </div>
             )}
             {props.status && <div className="Workstatus">{props.status}</div>}
           </div>
@@ -60,7 +81,7 @@ const Accordionitem = (props) => {
             <div className="Workproject">{props.title && <div>{props.title}</div>}</div>
             <div className="Workcat">{props.category && <div>{props.category}</div>}</div>
             <div className="Workdims">{props.dimensions && (
-              <div>{props.dimensions}</div>
+              <div><PortableText blocks={props.dimensions} /></div>
             )}</div>
             <div className="Workstatus">{props.status && <div>{props.status}</div>}</div>
           </div>

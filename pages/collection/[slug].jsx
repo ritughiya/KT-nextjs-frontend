@@ -20,15 +20,27 @@ const rgbDataURL = (r, g, b) =>
   `data:image/gif;base64,R0lGODlhAQABAPAA${
     triplet(0, r, g) + triplet(b, 255, 255)
   }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
-const serializers = {
-  types: {
-    code: (props) => (
-      <pre data-language={props.node.language}>
-        <code>{props.node.code}</code>
-      </pre>
-    ),
-  },
-};
+  const serializers = {
+    types: {
+      code: (props) => (
+        <pre data-language={props.node.language}>
+          <code>{props.node.code}</code>
+        </pre>
+      ),
+    },
+    marks: {
+      link: ({ mark, children }) => {
+        const { blank, href } = mark;
+        return blank ? (
+          <a href={href} target="_blank" rel="noreferrer">
+            {children}
+          </a>
+        ) : (
+          <a href={href}>{children}</a>
+        );
+      },
+    },
+  };
 const Collection = ({
   collectionTitle,
   collectionDesc,

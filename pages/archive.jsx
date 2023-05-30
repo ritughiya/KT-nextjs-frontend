@@ -13,6 +13,8 @@ import Accordionitem from "../components/Accordionitem.jsx";
 import { If, Elif, Else } from "rc-if-else";
 import Drawer from "react-modern-drawer";
 import Mobilemenu from "../components/Mobilemenu";
+import PortableText from "@sanity/block-content-to-react";
+
 
 const ArchivePage = ({ properties, footerproperties, colorproperties }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +26,12 @@ const ArchivePage = ({ properties, footerproperties, colorproperties }) => {
 
   const pageColor = "#" + colorproperties[0].archivepageColor;
   const menuColor = "#" + colorproperties[0].mobilemenuColor;
+
+  console.log(properties)
+
+  const works = properties[0].selectedWorks;
+
+  console.log(works)
 
   return (
     <>
@@ -95,10 +103,9 @@ const ArchivePage = ({ properties, footerproperties, colorproperties }) => {
             <div className="sub substatus">Status</div>
           </div>
 
-          {properties.map((post) => (
-            <div key={post._id}>
-              {post.selectedWorks &&
-                post.selectedWorks.map(
+
+              {works &&
+                works.map(
                   (
                     {
                       _id,
@@ -108,13 +115,12 @@ const ArchivePage = ({ properties, footerproperties, colorproperties }) => {
                       dimensions = "",
                       status = "",
                       archivestatus = "",
-                      archiveimages,
+                      archiveimages ="",
                     },
                     index
                   ) => (
-                    // </div>
                     <div key={index}>
-                      <Accordionitem
+                       <Accordionitem
                         year={year}
                         title={title}
                         category={category}
@@ -122,12 +128,12 @@ const ArchivePage = ({ properties, footerproperties, colorproperties }) => {
                         status={status}
                         archivestatus={archivestatus}
                         archiveimages={archiveimages}
-                      />
+                      /> 
+          
                     </div>
                   )
                 )}
-            </div>
-          ))}
+           
         </div>
       </div>
 
