@@ -58,7 +58,7 @@ a {
 }
 
 .pagePadding{
-  padding: 55px 22px;
+  padding: 55px 22px 22px 22px;
 }
 
 .Productswrapper .pagePadding{
@@ -252,7 +252,7 @@ a {
 .Archive .title,
 .About .title {
   width: 100vw;
-  height: 6vh;
+  height: 45px;
   padding: 0 26px;
 }
 
@@ -336,11 +336,11 @@ a {
 
 .Leftsubtitle {
   width: 88.1vh;
-  height: 6vh;
+  height: 45px;
   transform-origin: top left;
   position: fixed;
   left: 0;
-  top: 6vh;
+  top: 45px;
   display: flex;
   align-items: center;
   color: #2c2913;
@@ -356,10 +356,10 @@ a {
 
 .Rightsubtitle {
   width: 88.1vh;
-  height: 6vh;
+  height: 45px;
   position: fixed;
   left: 100vw;
-  top: 6vh;
+  top: 45px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -378,7 +378,7 @@ a {
   bottom: 0;
   width: 100vw;
   left: 0;
-  height: 6vh;
+  height: 45px;
   display: flex;
   align-items: center;
   border-top: 1px solid #2c2913;
@@ -493,10 +493,6 @@ a {
   height: 700px !important;
 }
 
-.Collectionblock.grid-item:last-child {
-  margin-bottom: 15vh;
-}
-
 .collectionTitle {
   font-size: 2em;
 }
@@ -546,11 +542,15 @@ a {
   padding-top: 1vh !important;
 }
 
+.lg-content{
+  top: 45px !important;
+}
+
 /* Collection Page */
 
 .Productswrapper,
 .Collectionswrapper {
-  padding-top: 6vh;
+  padding-top: 45px;
 }
 
 .category {
@@ -605,7 +605,7 @@ a {
 }
 
 .description {
-  margin-top: 6vh;
+  margin-top: 45px;
 }
 
 .description,
@@ -692,7 +692,7 @@ button {
 }
 
 .lg-toolbar {
-  margin-top: 6vh !important;
+  margin-top: 45px !important;
 }
 
 .lg-backdrop {
@@ -765,7 +765,7 @@ button {
 }
 
 .Archive .worklist {
-  padding-top: 6vh;
+  padding-top: 45px;
 }
 
 .Archive .title {
@@ -787,7 +787,7 @@ button {
 
 .worklist {
   width: 100%;
-  padding-left: 6vh;
+  padding-left: 45px;
 }
 
 .sorting {
@@ -916,13 +916,13 @@ img.archiveimage {
 
 .About .Rightsubtitle {
   width: 94vh;
-  padding: 0 6vh 0 0;
+  padding: 0 45px 0 0;
   border-left: 0;
 }
 
 .About .Leftsubtitle {
   width: 94vh;
-  padding: 0 0vh 0 6vh;
+  padding: 0 0vh 0 45px;
   border-right: 0;
 }
 
@@ -1213,8 +1213,7 @@ img.archiveimage {
     padding: 3vw;
   }
 
-  .longBlock,
-  .shortBlock {
+  .longBlock {
     height: 310px !important;
   }
 

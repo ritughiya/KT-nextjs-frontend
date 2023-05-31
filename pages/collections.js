@@ -108,94 +108,43 @@ const CollectionsPage = ({ properties, footerproperties, colorproperties }) => {
                       backgroundImage = "",
                     }) => (
                       <>
-                        <If condition={size === "shorter"}>
-                          <div
-                            key={_id}
-                            className="shortBlock Collectionblock grid-item"
-                          >
-                            <div className="blockbg pointer">
-                              <Link
-                                href="/collection/[slug]"
-                                as={`/collection/${slug.current}`}
-                                passHref
-                              >
-                                {backgroundImage && (
-                                  // <Image
-                                  //   key={_id}
-                                  //   className="bgimage"
-                                  //   src={urlFor(backgroundImage).url()}
-                                  //   height="60vh"
-                                  //   layout="fill"
-                                  //   objectFit="cover"
-                                  // ></Image>
-                                  <Image
+                        <div
+                          key={_id}
+                          className="longBlock Collectionblock grid-item"
+                        >
+                          <div className="blockbg pointer">
+                            <Link
+                              href="/collection/[slug]"
+                              as={`/collection/${slug.current}`}
+                              passHref
+                            >
+                              {backgroundImage && (
+                                <Image
                                   key={_id}
                                   className="bgimage"
                                   src={urlFor(backgroundImage).url()}
                                   layout="fill"
                                   objectFit="cover"
                                 ></Image>
-                                )}
-
-                              </Link>
-                            </div>
-                            <div className="blocktext">
-                              <Link
-                                href="/collection/[slug]"
-                                as={`/collection/${slug.current}`}
-                                passHref
-                              >
-                                <div className="pointer">
-                                  {collectionTitle && (
-                                    <div className="collectionTitle">
-                                      {collectionTitle}
-                                    </div>
-                                  )}
-                                </div>
-                              </Link>
-                            </div>
+                              )}
+                            </Link>
                           </div>
-                        </If>
-
-                        <If condition={size === "longer"}>
-                          <div
-                            key={_id}
-                            className="longBlock Collectionblock grid-item"
-                          >
-                            <div className="blockbg pointer">
-                              <Link
-                                href="/collection/[slug]"
-                                as={`/collection/${slug.current}`}
-                                passHref
-                              >
-                                {backgroundImage && (
-                                  <Image
-                                    key={_id}
-                                    className="bgimage"
-                                    src={urlFor(backgroundImage).url()}
-                                    layout="fill"
-                                    objectFit="cover"
-                                  ></Image>
+                          <div className="blocktext">
+                            <Link
+                              href="/collection/[slug]"
+                              as={`/collection/${slug.current}`}
+                              passHref
+                            >
+                              <div className="pointer">
+                                {collectionTitle && (
+                                  <div className="collectionTitle">
+                                    {collectionTitle}
+                                  </div>
                                 )}
-                              </Link>
-                            </div>
-                            <div className="blocktext">
-                              <Link
-                                href="/collection/[slug]"
-                                as={`/collection/${slug.current}`}
-                                passHref
-                              >
-                                <div className="pointer">
-                                  {collectionTitle && (
-                                    <div className="collectionTitle">
-                                      {collectionTitle}
-                                    </div>
-                                  )}
-                                </div>
-                              </Link>
-                            </div>
+                              </div>
+                            </Link>
                           </div>
-                        </If>
+                        </div>
                       </>
                     )
                   )}
