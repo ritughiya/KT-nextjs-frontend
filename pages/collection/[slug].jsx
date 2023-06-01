@@ -175,7 +175,23 @@ const Collection = ({
                             )}
                           </div>
                           <div className="blockContainer">
-                            <div className="inquireBlock">Inquire</div>
+                            {footerproperties.map(
+          (
+            {
+              inquire = "",
+            },
+            index
+          ) => (
+            <>
+            { inquire && ( 
+                                        <div className="inquireBlock">
+                                        <div key={index}>
+                                              <PortableText blocks={inquire} />
+            </div></div> )}
+            </>
+          )
+        )}
+        
                             {specsheet && (
                               <div className="specBlock">
                                 <div className="specsheet">
@@ -233,7 +249,7 @@ const Collection = ({
 export const getServerSideProps = async (pageContext) => {
   const pageSlug = pageContext.query.slug;
 
-  const footerquery = `*[_type == "footer" ]{title, notes, instagram, email, privacyPolicy, credits1, credits2}`;
+  const footerquery = `*[_type == "footer" ]{title, notes, instagram, email, inquire, privacyPolicy, credits1, credits2}`;
   const footerproperties = await sanityClient.fetch(footerquery);
 
   const colorquery = `*[_type == "pagecolors" ]`;

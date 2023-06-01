@@ -52,9 +52,33 @@ const IndexPage = ({ properties, colorproperties }) => {
             loop={true}
             navigation={true}
             modules={[EffectFade, Navigation, Pagination]}
-            className="mySwiper"
+            className="mySwiper desktop"
           >
             {post.slideshow.map(({ _id, mainImage = "", alt = "" }, index) => (
+              <div className="" key={index}>
+                <SwiperSlide>
+                  {mainImage && (
+                    <Image
+                      className="placeholder"
+                      src={urlFor(mainImage).url()}
+                      layout="fill"
+                      objectFit="cover"
+                      alt={alt}
+                    />
+                  )}
+                </SwiperSlide>
+              </div>
+            ))}
+          </Swiper>
+          <Swiper
+            spaceBetween={30}
+            effect={"fade"}
+            loop={true}
+            navigation={true}
+            modules={[EffectFade, Navigation, Pagination]}
+            className="mySwiper mobile"
+          >
+            {post.mobileslideshow.map(({ _id, mainImage = "", alt = "" }, index) => (
               <div className="" key={index}>
                 <SwiperSlide>
                   {mainImage && (
@@ -83,7 +107,11 @@ export const getServerSideProps = async () => {
     slideshow[]->{
       mainImage,
       alt,
-  }
+  },
+  mobileslideshow[]->{
+    mainImage,
+    alt,
+},
   }
   `;
   const properties = await sanityClient.fetch(query);

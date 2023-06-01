@@ -84,6 +84,7 @@ const Accordionitem = (props) => {
               <div><PortableText blocks={props.dimensions} /></div>
             )}</div>
             <div className="Workstatus">{props.status && <div>{props.status}</div>}</div>
+            <div className="action"></div>
           </div>
           <div className={` archiveimagecontainer  ${show ? "active" : null}`}>
             {props.archiveimages &&

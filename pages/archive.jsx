@@ -98,7 +98,7 @@ const ArchivePage = ({ properties, footerproperties, colorproperties }) => {
           <div className="sorting">
             <div className="sub subyear">Year</div>
             <div className="sub subproject">Project</div>
-            <div className="sub subcat">Category</div>
+            <div className="sub subcat">Collection</div>
             <div className="sub subdims">Dimensions</div>
             <div className="sub substatus">Status</div>
           </div>
