@@ -108,7 +108,7 @@ const ArchivePage = ({ properties, footerproperties, colorproperties }) => {
                 works.map(
                   (
                     {
-                      _id,
+                      _id="",
                       year = "",
                       title = "",
                       category = "",
@@ -166,8 +166,8 @@ const ArchivePage = ({ properties, footerproperties, colorproperties }) => {
 };
 
 export const getServerSideProps = async () => {
-  const query =
-    '*[ _type == "archivepage"]{pageTitle, pageColor, selectedWorks[]->{year, title, category, dimensions, status, archivestatus, archiveimages[]->, includedcollection[]->}}';
+   const query =  '*[ _type == "archivepage"]{selectedWorks[]->{_id, year, title,  category, dimensions, status, archivestatus, archiveimages[]->}}';
+  // const query =  '*[ _type == "archivepage"]'
   const properties = await sanityClient.fetch(query);
 
   const footerquery = `*[_type == "footer" ]{title, notes, instagram, email, privacyPolicy, credits1, credits2}`;
@@ -177,11 +177,7 @@ export const getServerSideProps = async () => {
   const colorproperties = await sanityClient.fetch(colorquery);
 
   if (!properties.length) {
-    return {
-      props: {
-        properties: [],
-      },
-    };
+    return null;
   } else {
     return {
       props: {
