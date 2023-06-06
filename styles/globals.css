@@ -146,7 +146,7 @@ a {
 
 .Footercontainer {
   border-top: 1px solid #2c2913;
-  padding: 3vh 6vw 8vh 6vw;
+  padding: 25px 6vw 25px 6vw;
 }
 
 .Archivefooter {
@@ -559,7 +559,6 @@ a {
   height: min-content;
   color: #f9f7f4;
   padding: 8px 11px;
-  border-radius: 1.5em;
   font-family: SctoGroteskreg;
   letter-spacing: 0.03em;
   font-size: 11px;
@@ -894,6 +893,7 @@ content: url("data:image/svg+xml,%3Csvg width='34' height='34' viewBox='0 0 34 3
 
 .action{
   transition: all 1s;
+  margin-left:auto;
 }
 
 .Workcontainer .action::after{
@@ -1081,7 +1081,7 @@ img.archiveimage {
 
 @media only screen and (max-width: 1000px) {
   .Footercontainer {
-    padding: 3vh 7vw 8vh 7vw;
+    padding: 25px 6vw 25px 6vw;
   }
 }
 
