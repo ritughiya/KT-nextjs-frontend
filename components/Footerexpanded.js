@@ -8,6 +8,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import PortableText from "@sanity/block-content-to-react";
+import Script from 'next/script'
 
 const serializers = {
   types: {
@@ -67,7 +68,10 @@ const Footer = (props) => {
           </div>
         </div>
       </div>
+      <Script src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SSrDta" />
+
     </div>
+    
   );
 };
 
