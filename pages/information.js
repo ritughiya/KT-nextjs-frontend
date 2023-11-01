@@ -157,7 +157,7 @@ const AboutPage = ({ properties, footerproperties, colorproperties }) => {
             </div>
 
             <div className="Aboutpadding stockdesc ">
-              <div className="Abouthed">Stockists</div>
+              <div className="Abouthed">Partners</div>
               <div className="Abouttxt stockistflex">
                 {post.stockists &&
                   post.stockists.map(({ _id, city = "", storename = "" }) => (

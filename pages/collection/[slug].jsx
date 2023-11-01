@@ -6,9 +6,16 @@ import Customhead from "../../components/Customhead";
 import Head from "next/head";
 import PortableText from "@sanity/block-content-to-react";
 import Footer from "../../components/Footerright";
-import Slider from "../../components/Carousel";
+// import Slider from "../../components/Carousel";
 import Mobilemenu from "../../components/Mobilemenu";
 import LightGallery from "lightgallery/react";
+import dynamic from 'next/dynamic'
+
+ 
+const Slider = dynamic(() => import('../../components/Carousel'), {
+  ssr: false,
+})
+
 const keyStr =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 const triplet = (e1, e2, e3) =>
@@ -128,6 +135,7 @@ const Collection = ({
                     material = "",
                     dimensions = "",
                     shade = "",
+                    price ="",
                     specsheet = "",
                     slideshow = "",
                   }) => (
@@ -171,6 +179,12 @@ const Collection = ({
                               <div className="shade">
                                 <div className="subhed">Shade</div>
                                 <PortableText blocks={shade} />
+                              </div>
+                            )}
+                            {price && (
+                              <div className="price">
+                                <div className="subhed">Price</div>
+                                <PortableText blocks={price} />
                               </div>
                             )}
                           </div>
@@ -266,6 +280,7 @@ export const getServerSideProps = async (pageContext) => {
             material,
             dimensions,
             shade,
+            price,
             year,
             category,
             status,

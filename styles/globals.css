@@ -525,7 +525,11 @@ a {
 
 .lg-react-element {
   display: flex;
+}
+
+.carContainer{
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .lg-sub-html {
@@ -610,7 +614,8 @@ a {
 .description,
 .material,
 .dimensions,
-.shade {
+.shade,
+.price {
   line-height: 1.5;
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -625,10 +630,11 @@ a {
 .productContainer p {
   margin-block-start: 0px !important;
   margin-block-end: 0px !important;
+  flex:1;
 }
 
 .productContainer .subhed {
-  width: 13vw;
+  width: 132px;
   padding-right:22px;
 }
 
@@ -672,6 +678,14 @@ a {
   position: absolute;
   left: 1vw;
   bottom: 1vw;
+}
+
+button.prev{
+  padding: 0 24px 8px 0;
+}
+
+button.next{
+  padding: 0 0 8px 0px;
 }
 
 button:disabled {
@@ -1464,7 +1478,7 @@ img.archiveimage {
     }
 
     .flexRight{
-      height:402px;
+      height:428px;
     }
 
   .workdetail {
