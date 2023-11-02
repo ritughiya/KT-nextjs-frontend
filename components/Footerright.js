@@ -53,7 +53,7 @@ const Footer = (props) => {
         </div>
         <div className="form formleft">
           <div className="signup">Newsletter Sign Up</div>
-        <div className="klaviyo-form-UnCYVd"></div>
+        <div className="klaviyo-form-SYs2H4"></div>
         </div>
 
 
