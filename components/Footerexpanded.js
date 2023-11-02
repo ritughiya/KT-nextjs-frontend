@@ -68,7 +68,6 @@ const Footer = (props) => {
           </div>
         </div>
       </div>
-      <Script src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SSrDta" />
 
     </div>
     
