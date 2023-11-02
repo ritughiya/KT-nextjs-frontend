@@ -8,8 +8,14 @@ import { sanityClient, urlFor } from "../sanity";
 import Static from "next/image";
 import Customhead from "../components/Customhead";
 import PortableText from "@sanity/block-content-to-react";
-import Footer from "../components/Footerexpanded";
 import Mobilemenu from "../components/Mobilemenu";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("../components/Footerexpanded"), {
+    ssr: false,
+  });
+
+
 
 const serializers = {
   types: {
