@@ -11,6 +11,7 @@ import PortableText from "@sanity/block-content-to-react";
 import Mobilemenu from "../components/Mobilemenu";
 import dynamic from "next/dynamic";
 
+
 const Footer = dynamic(() => import("../components/Footerexpanded"), {
     ssr: false,
   });

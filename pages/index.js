@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Customhead from "../components/Customhead";
+
 import NavigationHome from "../components/NavigationHome";
 import Mobilemenu from "../components/Mobilemenu";
 import { sanityClient, urlFor } from "../sanity";

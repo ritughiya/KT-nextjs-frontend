@@ -10,6 +10,7 @@ import Link from "next/link";
 import PortableText from "@sanity/block-content-to-react";
 import Script from 'next/script'
 
+
 const serializers = {
   types: {
     code: (props) => (
@@ -34,6 +35,9 @@ const serializers = {
 };
 
 const Footer = (props) => {
+  // const router = useRouter();
+
+  // router.reload();
   return (
     <div>
       <div className="Footerexpanded">
