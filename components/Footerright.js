@@ -37,17 +37,23 @@ const Footer = (props) => {
     <div>
       <div className="Footerright">
 
-        <div className="">
+      <div className="links2">
+        <div className="l1">
         <PortableText
                     blocks={props.instagram}
                     serializers={serializers}
                   />
         </div>
-        <div className="">
+        <div className="l2">
         <PortableText
                     blocks={props.email}
                     serializers={serializers}
                   />
+        </div>
+        </div>
+        <div className="form formleft">
+          <div className="signup">Newsletter Sign Up</div>
+        <div className="klaviyo-form-UnCYVd"></div>
         </div>
 
 
@@ -55,6 +61,8 @@ const Footer = (props) => {
       </div>
 
     </div>
+
+
 
   );
 }

@@ -37,7 +37,7 @@ const Footer = (props) => {
   return (
     <div>
       <div className="Footerexpanded">
-      <div className="klaviyo-form-UnCYVd"></div>
+        <div className="stacked">
         <div className="flex text">
           <div className="subtext">
             <PortableText blocks={props.notes} serializers={serializers} />{" "}
@@ -60,6 +60,15 @@ const Footer = (props) => {
             </div>
           </div>
         </div>
+        <div className="formblock">
+          <div className="e"></div>
+          <div className="form">
+          <div className="signup">Newsletter Sign Up</div>
+        <div className="klaviyo-form-UnCYVd"></div>
+        </div>
+        </div>
+        </div>
+
 
         <div className="flexbetween">
           <div className="footerlogo">{props.title}</div>

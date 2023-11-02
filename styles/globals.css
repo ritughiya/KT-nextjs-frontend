@@ -1093,6 +1093,97 @@ img.archiveimage {
   color: transparent !important;
 }
 
+ /* Klaviyo form */
+
+ button.needsclick.go3894874857.kl-private-reset-css-Xuajs1{
+  font-family: SctoGroteskreg !important;
+}
+
+.stacked{
+  display: flex;
+  flex-direction: column;
+}
+
+.formblock{
+  display: flex;
+  margin-top: 44px;
+}
+.e {
+  width: 45vw;
+}
+.form{
+width: 35vw;
+margin: 0 0% 0 15vw;
+text-transform: uppercase;
+font-size: 11px;
+letter-spacing: 0.03em;
+line-height: 14px;
+}
+.signup{
+margin-bottom: 19px;
+}
+.klaviyo-form-UnCYVd.klaviyo-form.form-version-cid-1{
+text-transform: uppercase;
+font-size: 11px;
+letter-spacing: 0.03em;
+line-height: 14px;
+}
+.needsclick.kl-private-reset-css-Xuajs1 {
+text-transform: uppercase !important;
+font-size: 11px !important;
+letter-spacing: 0.03em !important;
+line-height: 14px !important;
+font-weight: normal !important;
+font-family: SctoGroteskreg !important;
+color: #2c2913 !important;
+padding: 0 !important;
+}
+.go3176171171 p {
+  margin: 0px;
+  text-align: left !important;
+}
+span.ql-font-nunito-sans {
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  letter-spacing: 0.03em !important;
+  line-height: 14px !important;
+  font-weight: normal !important;
+  font-family: SctoGroteskreg !important;
+  color: #2c2913 !important;
+  text-align: left !important;
+}
+input:-internal-autofill-selected {
+background-color: transparent !important;}
+input#email_88755818{
+  padding: 0 !important;
+  margin: 0 15px 0 0 !important;
+}
+input#email_88755730 {
+text-transform: uppercase !important;
+font-size: 11px !important;
+letter-spacing: 0.03em !important;
+line-height: 14px !important;
+font-family: SctoGroteskreg !important;
+color: #2c2913 !important;
+padding: 0 !important;
+}
+button.needsclick.go3493798975.kl-private-reset-css-Xuajs1 {
+padding: 0 !important;
+}
+
+.links2{
+  display:flex;
+}
+
+.l1{
+  margin-right:35px;
+}
+
+.l1 p, .l2 p{
+margin-block-start: 0 !important;
+    margin-block-end: 0 !important;}
+
+
 @media only screen and (max-width: 1000px) {
   .Footercontainer {
     padding: 25px 6vw 25px 6vw;
@@ -1278,10 +1369,40 @@ img.archiveimage {
 
   .Footerexpanded .links {
     display: block;
-  }
+    width: 45vw !important;
+    margin: 0 0% 0 5vw !important;
+}
+
+.formblock{
+  margin-top:44px !important;
+}
+
+.form{
+  display: block;
+  width: 45vw !important;
+  margin: 0 0% 0 5vw !important;
+}
 
   .Footerexpanded .footerlogo{
     font-size:25px;
+  }
+
+  .Footerexpanded .credits{
+    width: 45vw !important;
+    margin: 0 0% 0 5vw !important;
+  }
+
+
+.Footerexpanded .flexbetween {
+    margin-top: 80px !important;}
+
+    .needsclick.kl-private-reset-css-Xuajs1{
+      display:block !important;
+    }
+
+    input#email_88755818 {
+      margin: 0 !important;
+      width: 100%;
   }
 
   .Footerright,
@@ -1490,6 +1611,22 @@ img.archiveimage {
   .Worktitle {
     margin-bottom: 2vh;
   }
+
+ 
+  .links2{
+    display:block;
+  }
+  
+  .formleft{
+      display: block;
+      width: 100% !important;
+      margin: 44px 0 0 0 !important;
+  }
+
+  .l1 p, .l2 p{
+    margin-block-start: 1em !important;
+        margin-block-end: 1em !important;}
+
 }
 
 @media only screen and (max-width: 600px) {
