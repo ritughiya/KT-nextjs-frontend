@@ -37,7 +37,7 @@ const Footer = (props) => {
   return (
     <div>
       <div className="Footerexpanded">
-      <div class="klaviyo-form-UnCYVd"></div>
+      <div className="klaviyo-form-UnCYVd"></div>
         <div className="flex text">
           <div className="subtext">
             <PortableText blocks={props.notes} serializers={serializers} />{" "}
