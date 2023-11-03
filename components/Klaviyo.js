@@ -1,20 +1,18 @@
-//Klaviyo.js
+'use client'
+import Script from 'next/script'
 
-/**
- * @jest-environment jsdom
- */
-import React, { useState, useEffect } from "react";
+const Klaviyo = () => {
+    return (
+        <>
+         <iframe
+        src={'/klaviyo-form'}
+        height='100px'
+        className="w-full"
+        id="iframe"
+      />
+      {<div></div>}
+    </>
+    )
+  }
 
-
-
-
-function Klaviyo(props) {
- return (
-   <>
- <div key={props.number} className={props.number}>
- <div className="klaviyo-form-UnCYVd"></div>
-</div>
-</>
-)
-}
-export default Klaviyo
+  export default Klaviyo
