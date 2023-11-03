@@ -9,7 +9,6 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { useState, useEffect, useCallback } from 'react';
 import Div100vh from 'react-div-100vh'
-import { useRouter } from 'next/router'
 
 
 
@@ -20,10 +19,8 @@ import Drawer from 'react-modern-drawer'
 import 'react-modern-drawer/dist/index.css'
 
 
+
 export default function Navigation() {
-
-  const router = useRouter()
-
 
   const [isOpen, setIsOpen] = useState(false)
   const [isActive, setActive] = useState(false)
@@ -39,16 +36,12 @@ export default function Navigation() {
 
         </div>
         <div className="horflex">
-        <div onClick={() => router.push('/collections')}>
-        <div className="hello subtitle Leftsubtitle pointer" >
-              Collections
-            </div>
-        </div>
-          {/* <Link href="/collections" passHref>
+          
+          <Link href="/collections" passHref>
             <div className="subtitle Leftsubtitle pointer" >
               Collections
             </div>
-          </Link> */}
+          </Link>
           <Link href="/archive" passHref>
             <div className="subtitle Rightsubtitle pointer">
               Archive

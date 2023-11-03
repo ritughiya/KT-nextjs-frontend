@@ -4,11 +4,12 @@
  * @jest-environment jsdom
  */
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import PortableText from "@sanity/block-content-to-react";
 import Script from 'next/script'
+import Klaviyo from "./Klaviyo.js";
 
 
 const serializers = {
@@ -35,9 +36,18 @@ const serializers = {
 };
 
 const Footer = (props) => {
-  // const router = useRouter();
+  const [klaviyo, setKlaviyo] = useState('');
+  const klaviyoKey = Math.floor(Math.random() * 100);
 
-  // router.reload();
+  useEffect(() => {
+console.log('change')
+
+console.log(klaviyoKey)
+
+setKlaviyo(klaviyoKey);
+  }, []);
+
+
   return (
     <div>
       <div className="Footerexpanded">
@@ -68,7 +78,7 @@ const Footer = (props) => {
           <div className="e"></div>
           <div className="form">
           <div className="signup">Newsletter Sign Up</div>
-        <div className="klaviyo-form-UnCYVd"></div>
+        <Klaviyo number={klaviyoKey}/>
         </div>
         </div>
         </div>
