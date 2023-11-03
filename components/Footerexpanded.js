@@ -78,7 +78,7 @@ setKlaviyo(klaviyoKey);
           <div className="e"></div>
           <div className="form">
           <div className="signup">Newsletter Sign Up</div>
-        <Klaviyo/>
+        <Klaviyo formColor={props.formColor} />
         </div>
         </div>
         </div>

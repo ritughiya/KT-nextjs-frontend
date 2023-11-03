@@ -230,6 +230,7 @@ const AboutPage = ({ properties, footerproperties, colorproperties }) => {
                 privacyPolicy={privacyPolicy}
                 credits1={credits1}
                 credits2={credits2}
+                formColor={pageColor} 
               />
             </div>
           )

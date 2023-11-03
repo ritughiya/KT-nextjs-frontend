@@ -173,7 +173,7 @@ const CollectionsPage = ({ properties, footerproperties, colorproperties }) => {
             index
           ) => (
             <div key={index}>
-              <Footer instagram={instagram} email={email} />
+              <Footer instagram={instagram} email={email} formColor={pageColor} />
             </div>
           )
         )}

@@ -40,9 +40,12 @@
   display:none;
 }
 
+html{
+  background-color: #f9f7f4 !important;
+}
+
 html,
 body {
-  background-color: #f9f7f4 !important;
   padding: 0;
   margin: 0;
   font-family: SctoGroteskreg;
@@ -1152,6 +1155,11 @@ span.ql-font-nunito-sans {
   color: #2c2913 !important;
   text-align: left !important;
 }
+
+.klaviyo-form.klaviyo-form.klaviyo-form{
+  height: 50px !important;
+  align-items: flex-start;
+}
 input:-internal-autofill-selected {
 background-color: transparent !important;}
 input#email_88755818{
@@ -1169,6 +1177,11 @@ padding: 0 !important;
 }
 button.needsclick.go3493798975.kl-private-reset-css-Xuajs1 {
 padding: 0 !important;
+margin-left: 10px;
+}
+
+span#klaviyo_ariaid_2 {
+  padding: 0 5px !important;
 }
 
 .links2{
@@ -1182,6 +1195,15 @@ padding: 0 !important;
 .l1 p, .l2 p{
 margin-block-start: 0 !important;
     margin-block-end: 0 !important;}
+
+    .form iframe{
+      width: 100%;
+      border: none;
+    }
+
+    .klaviyo{
+      background-color: transparent !important;
+    }
 
 
 @media only screen and (max-width: 1000px) {
@@ -1396,13 +1418,12 @@ margin-block-start: 0 !important;
 .Footerexpanded .flexbetween {
     margin-top: 80px !important;}
 
-    .needsclick.kl-private-reset-css-Xuajs1{
-      display:block !important;
-    }
+
 
     input#email_88755818 {
       margin: 0 !important;
       width: 100%;
+
   }
 
   .Footerright,
@@ -1636,6 +1657,8 @@ margin-block-start: 0 !important;
   .Archive .title button.open {
     height: 20px;
   }
+
+
 }
 
 @media only screen and (max-width: 400px) {
@@ -1645,6 +1668,20 @@ margin-block-start: 0 !important;
   .Archive .title button.open {
     height: 18px;
   }
+}
+
+@media only screen and (max-width: 300px) {
+  .needsclick.kl-private-reset-css-Xuajs1{
+    display:block !important;
+  } 
+
+  .needsclick.kl-private-reset-css-Xuajs1 input {
+    width: 100%;
+}
+
+button.needsclick.go3493798975.kl-private-reset-css-Xuajs1 {
+  margin-left: 0px !important;
+}
 }
 
 @media only screen and (max-height: 575.98px) and (orientation: landscape) {

@@ -8,6 +8,7 @@ import React from "react";
 import Head from 'next/head'
 import Link from "next/link"
 import PortableText from '@sanity/block-content-to-react'
+import Klaviyo from "./Klaviyo.js";
 
 
 const serializers = {
@@ -31,6 +32,7 @@ const serializers = {
 }
 
 const Footer = (props) => {
+  
 
   return (
 
@@ -52,7 +54,7 @@ const Footer = (props) => {
         </div>
         <div className="form formleft">
           <div className="signup">Newsletter Sign Up</div>
-        <div className="klaviyo-form-UnCYVd"></div>
+          <Klaviyo formColor={props.formColor} />
         </div>
 
   
