@@ -128,7 +128,7 @@ a {
 .Footerleft {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .Footerleft div a,
@@ -142,7 +142,7 @@ a {
 .Footerright {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* Footer styling */
