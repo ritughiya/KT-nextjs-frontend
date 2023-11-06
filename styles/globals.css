@@ -1206,12 +1206,15 @@ margin-block-start: 0 !important;
 
 
 @media only screen and (max-width: 1000px) {
-  .Footercontainer {
-    padding: 28px 71px;
-  }
+
 }
 
 @media only screen and (max-width: 900px) {
+
+  .Footercontainer {
+    padding: 28px;
+  }
+  
   .desktop {
     display: none !important;
   }
