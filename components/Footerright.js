@@ -8,7 +8,7 @@ import React from "react";
 import Head from 'next/head'
 import Link from "next/link"
 import PortableText from '@sanity/block-content-to-react'
-import Klaviyo from "./Klaviyo.js";
+import Klaviyo from "./Klaviyoarchive.js";
 
 
 

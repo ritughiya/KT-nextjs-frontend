@@ -153,11 +153,11 @@ a {
 }
 
 .Archivefooter {
-  padding: 28px 28px 71px 71px !important;
+  padding: 28px 28px 43px 71px !important;
 }
 
 .Slugfooter {
-  padding: 28px 71px 71px 28px !important;
+  padding: 28px 71px 43px 28px !important;
 }
 
 .Archivefooter.Footercontainer {
@@ -1184,6 +1184,8 @@ span#klaviyo_ariaid_2 {
   padding: 0 5px !important;
 }
 
+
+
 .links2{
   display:flex;
 }
@@ -1201,9 +1203,6 @@ margin-block-start: 0 !important;
       border: none;
     }
 
-    .klaviyo{
-      background-color: transparent !important;
-    }
 
 
 @media only screen and (max-width: 1000px) {

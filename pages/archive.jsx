@@ -27,11 +27,10 @@ const ArchivePage = ({ properties, footerproperties, colorproperties }) => {
   const pageColor = "#" + colorproperties[0].archivepageColor;
   const menuColor = "#" + colorproperties[0].mobilemenuColor;
 
-  console.log(properties)
 
   const works = properties[0].selectedWorks;
 
-  console.log(works)
+
 
   return (
     <>

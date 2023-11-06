@@ -9,7 +9,7 @@ import Head from "next/head";
 import Link from "next/link";
 import PortableText from "@sanity/block-content-to-react";
 import Script from 'next/script'
-import Klaviyo from "./Klaviyo.js";
+import Klaviyo from "./Klaviyoinfo.js";
 
 
 const serializers = {
@@ -36,16 +36,6 @@ const serializers = {
 };
 
 const Footer = (props) => {
-  const [klaviyo, setKlaviyo] = useState('');
-  const klaviyoKey = Math.floor(Math.random() * 100);
-
-  useEffect(() => {
-console.log('change')
-
-console.log(klaviyoKey)
-
-setKlaviyo(klaviyoKey);
-  }, []);
 
 
   return (
