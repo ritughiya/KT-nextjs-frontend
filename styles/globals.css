@@ -149,15 +149,15 @@ a {
 
 .Footercontainer {
   border-top: 1px solid #2c2913;
-  padding: 25px 6vw 25px 6vw;
+  padding: 28px 71px
 }
 
 .Archivefooter {
-  padding: 3vh 26px 8vh 6vw !important;
+  padding: 28px 28px 71px 71px !important;
 }
 
 .Slugfooter {
-  padding: 3vh 6vw 8vh 26px !important;
+  padding: 28px 71px 71px 28px !important;
 }
 
 .Archivefooter.Footercontainer {
@@ -979,7 +979,7 @@ img.archiveimage {
 }
 
 .Aboutpadding {
-  padding: 131px 6vw 0 6vw;
+  padding: 131px 71px 0;
   justify-content: space-between;
   display: flex;
 }
@@ -987,7 +987,7 @@ img.archiveimage {
 .contactdesc,
 .stockdesc,
 .pressdesc {
-  padding: 83px 6vw 0 6vw;
+  padding: 83px 71px 0;
 }
 
 .Abouttxt {
@@ -1208,7 +1208,7 @@ margin-block-start: 0 !important;
 
 @media only screen and (max-width: 1000px) {
   .Footercontainer {
-    padding: 25px 6vw 25px 6vw;
+    padding: 28px 71px;
   }
 }
 
