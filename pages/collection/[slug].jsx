@@ -6,7 +6,6 @@ import Customhead from "../../components/Customhead";
 import Head from "next/head";
 import PortableText from "@sanity/block-content-to-react";
 import Footer from "../../components/Footerright";
-// import Slider from "../../components/Carousel";
 import Mobilemenu from "../../components/Mobilemenu";
 import LightGallery from "lightgallery/react";
 import dynamic from 'next/dynamic'

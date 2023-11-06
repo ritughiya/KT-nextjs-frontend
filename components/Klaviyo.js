@@ -4,24 +4,24 @@ import React, { useEffect, useState } from "react";
 
 
 const Klaviyo = (props) => {
-    const [color, setColor] = useState('');
+//     const [color, setColor] = useState('');
 
 
-    useEffect(() => {
-        console.log('change color');
-        setColor(props.formColor);
+//     useEffect(() => {
+//         console.log('change color');
+//         setColor(props.formColor);
 
-          }, []);
+//           }, []);
 
-          var delayInMilliseconds = 500; // half a second
+//           var delayInMilliseconds = 500; // half a second
 
-setTimeout(function() { 
+// setTimeout(function() { 
 
-   var iframe = document.getElementsByTagName('iframe')[0];
-   iframe.style.background = (props.formColor);
-   iframe.contentWindow.document.body.style.backgroundColor = (props.formColor);
+//    var iframe = document.getElementsByTagName('iframe')[0];
+//    iframe.style.background = (props.formColor);
+//    iframe.contentWindow.document.body.style.backgroundColor = (props.formColor);
 
-}, delayInMilliseconds);
+// }, delayInMilliseconds);
 
 
     return (
@@ -29,7 +29,6 @@ setTimeout(function() {
          <iframe
         src={'/klaviyo-form'}
         height='50px'
-        className={`${color}`}
         id="iframe"
       />
       {<div></div>}
