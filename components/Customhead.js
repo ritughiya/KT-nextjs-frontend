@@ -29,14 +29,14 @@ export default function Customhead() {
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Kassandra Thatcher" />
 <meta property="og:description" content="Sculptural Table Lamps, Floor Lamps and Abstract Sculptures by Kassandra Thatcher. The collections merge functional design and art, blurring the line and reimagining how we connect to our lived spaces. Kassandra terms the style of her work as 'static gesture.' in reference to suspended motion and its form as the basin of her inspiration. Made by hand and to order." />
-<meta property="og:image" content="/favicon.ico" />
+<meta property="og:image" content="/og.png" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="kassandrathatcher.com" />
 <meta property="twitter:url" content="https://www.kassandrathatcher.com/" />
 <meta name="twitter:title" content="Kassandra Thatcher" />
 <meta name="twitter:description" content="Sculptural Table Lamps, Floor Lamps and Abstract Sculptures by Kassandra Thatcher. The collections merge functional design and art, blurring the line and reimagining how we connect to our lived spaces. Kassandra terms the style of her work as 'static gesture.' in reference to suspended motion and its form as the basin of her inspiration. Made by hand and to order." />
-<meta name="twitter:image" content="/favicon.ico" />
+<meta name="twitter:image" content="/og.png" />
 
 
     </Head>
