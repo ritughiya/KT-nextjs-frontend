@@ -135,6 +135,7 @@ const Collection = ({
                     dimensions = "",
                     shade = "",
                     price ="",
+                    buyButtonText ="",
                     specsheet = "",
                     slideshow = "",
                   }) => (
@@ -144,7 +145,7 @@ const Collection = ({
                       )}
                       <div className="pageHeader left mobile">{title && title}</div>
                       <div className="productContainer">
-                        <div className="flexLeft">
+                      <div className="flexLeft">
                           <div className="block">
                             <div className="Titleflex">
                               <div className="pageHeader left desktop">
@@ -186,40 +187,34 @@ const Collection = ({
                                 <PortableText blocks={price} />
                               </div>
                             )}
-                          </div>
-                          <div className="blockContainer">
-                            {footerproperties.map(
-          (
-            {
-              inquire = "",
-            },
-            index
-          ) => (
-            <>
-            { inquire && ( 
-                                        <div className="inquireBlock">
-                                        <div key={index}>
-                                              <PortableText blocks={inquire} />
-            </div></div> )}
-            </>
-          )
-        )}
-        
                             {specsheet && (
-                              <div className="specBlock">
-                                <div className="specsheet">
+                              <div className="specSheet">
+                                <div className="subhed">Spec Sheet</div>
                                   <Link href={`${specsheet}`} passHref>
                                     <a
                                       target="_blank"
                                       rel="noopener noreferrer"
                                     >
-                                      Spec Sheet
+                                      Info
                                     </a>
-                                  </Link>
-                                </div>
-                              </div>
+                                  </Link>                              </div>
                             )}
                           </div>
+                           {buyButtonText && (
+                          <div className="blockContainer">
+<>
+                                        <div className="buyBlock">
+                                        <div>
+                                              Buy
+            </div></div> 
+                            
+        
+                              <div className="infoBlock">
+                                    <PortableText blocks={buyButtonText} />
+                              </div>
+                              </>
+                          </div>
+                        )}
                         </div>
 
                         <Slider
@@ -280,6 +275,7 @@ export const getServerSideProps = async (pageContext) => {
             dimensions,
             shade,
             price,
+            buyButtonText,
             year,
             category,
             status,
